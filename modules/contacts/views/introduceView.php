@@ -17,13 +17,13 @@
     <div id="wrapper" class="wp-inner clearfix">
         <div class="section" id="customer-info-wp">
             <div class="section-head">
-                <h1 class="section-title">gioi thiệu</h1>
+                <h1 class="section-title">Giới thiệu</h1>
             </div>
 
         </div>
         <div class="section" id="order-review-wp">
             <div class="section-head">
-                <h1 class="section-title">giói thiệu</h1>
+                <h1 class="section-title">Giới thiệu</h1>
             </div>
             <div class="section-detail">
 

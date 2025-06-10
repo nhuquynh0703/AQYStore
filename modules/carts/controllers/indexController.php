@@ -8,9 +8,6 @@ function construct() {
 
 
 
-
-
-
 function addAction(){
 
 	$id = $_GET['id'];
@@ -40,7 +37,7 @@ function showAction(){
 			$_SESSION['cart']['info']['id_customer'] = $_SESSION['id_customer'];
 			getCartByCustomer($_SESSION['id_customer']);
 		}else{
-			echo("Bạn chưa đăng nhập, vui lòng đăng nhập vào đeee!");
+			// echo("Bạn chưa đăng nhập, vui lòng đăng nhập vào đeee!");
 		}
 	}
 	load_view('index');
@@ -89,10 +86,6 @@ function updateAction(){
 	updateCart($_SESSION['id_customer']);
 	header('location: ?modules=carts&controllers=index&action=show');
 }
-
-
-
-
 
 
  ?>

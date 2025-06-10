@@ -20,24 +20,27 @@
                         <p>0848.454.796 - 0822.225.286</p>
                     </li>
                     <li>
-                        <p> Nhom4@gmail.com</p>
+                        <p>nhom7@gmail.com</p>
                     </li>
                 </ul>
             </div>
             <div class="block menu-ft policy" id="info-shop">
-                <h3 class="title">Chính sách mua hàng</h3>
+                <h3 class="title">Chính sách chung</h3>
                 <ul class="list-item">
                     <li>
-                        <a href="" title="">Quy định - chính sách</a>
+                        <a href="" title="">Chính sách vận chuyển</a>
                     </li>
                     <li>
-                        <a href="" title="">Chính sách bảo hành - đổi trả</a>
+                        <a href="" title="">Chính sách bảo hành</a>
                     </li>
                     <li>
-                        <a href="" title="">Chính sách hội viện</a>
+                        <a href="" title="">Chính sách cho doanh nghiệp</a>
                     </li>
                     <li>
-                        <a href="" title="">Giao hàng - lắp đặt</a>
+                        <a href="" title="">Chính sách kiểm hàng</a>
+                    </li>
+                    <li>
+                        <a href="" title="">Bảo mật thông tin khách hàng</a>
                     </li>
                 </ul>
             </div>
@@ -46,8 +49,8 @@
                 <p class="desc">Đăng ký với chung tôi để nhận được thông tin ưu đãi sớm nhất</p>
                 <div id="form-reg">
                     <form method="POST" action="">
-                        <input type="email" name="email" id="email" placeholder="Nhập email tại đây">
-                        <button type="submit" id="sm-reg">Đăng ký</button>
+                        <input type="email" name="email" id="email" placeholder="Nhập email của bạn" required>
+                        <button type="submit" id="sm-reg">Đăng ký ngay</button>
                     </form>
                 </div>
             </div>

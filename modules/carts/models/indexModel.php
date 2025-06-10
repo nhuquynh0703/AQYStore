@@ -1,7 +1,5 @@
 <?php 
 
-
-
 function addCartByID($id){
 	
 	if(checkCart($_SESSION['id_customer'])){
@@ -47,9 +45,6 @@ function addCartByID($id){
 }
 
 
-
-
-
 function updateCart($id_customer){
 
 	if(isset($_SESSION['cart']))
@@ -78,22 +73,11 @@ function updateCart($id_customer){
 	}
 }
 
-
-
-
-
-
-
 function deleteItemByID($id){
 	unset($_SESSION['cart']['buy'][$id]);
 	db_delete('tbl_detail_cart', "`id_product` = '$id'");
 	updateCart($_SESSION['id_customer']);
 }
-
-
-
-
-
 
 function deletecart(){
 
@@ -106,33 +90,16 @@ function deletecart(){
 	unset($_SESSION['cart']);
 }
 
-
-
-
-
-
 function getProductDetailById($id){
 
 	$data = db_fetch_row("SELECT * FROM `tbl_product` WHERE `id`=$id");
 	return $data;
 }
 
-
-
-
-
-
-
 function checkCartByCustomer($id_customer){
 
 	return db_fetch_row("SELECT * FROM `tbl_cart` WHERE `id_customer` = $id_customer");
 }
-
-
-
-
-
-
 
 function getCartByCustomer($id_customer){
 
@@ -172,7 +139,6 @@ function getCartByCustomer($id_customer){
 
 			}
 		}
-
 	}
 }
 

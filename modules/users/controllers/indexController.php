@@ -16,17 +16,11 @@ function indexAction(){
 	load_view('index');
 }
 
-
-
 function logoutAction(){
 	
 	logout();
 	header('location:?modules=home');
 }
-
-
-
-
 
 function loginAction(){
 
@@ -70,10 +64,6 @@ function loginAction(){
 	load_view('index');
 
 }
-
-
-
-
 
 
 function crateAcountAction(){

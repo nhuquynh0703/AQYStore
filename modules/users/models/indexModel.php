@@ -21,8 +21,6 @@ function insertUser($username, $password, $fullname, $mail, $phone, $address, $c
 }
 
 
-
-
 function checkUser($username, $mail, $phone){
 
 	$check =true;
@@ -39,9 +37,6 @@ function checkUser($username, $mail, $phone){
 	return $check;
 
 }
-
-
-
 
 
 

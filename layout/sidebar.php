@@ -9,33 +9,50 @@
                             <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Điện Thoại</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=category_product" title="">Iphone</a>
+                                    <a href="?page=category_product" title="">iPhone</a>
                                 </li>
                                 <li>
                                     <a href="?page=category_product" title="">Samsung</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Oppo</a>
+                                    <a href="?page=category_product" title="">Xiaomi</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Xiaomi</a>
+                                    <a href="?page=category_product" title="">OPPO</a>
                                 </li>
                             </ul>
                         </li> 
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Máy tính</a>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Máy tính bảng</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=category_product" title="">Macbook</a>
+                                    <a href="?page=category_product" title="">iPad</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Dell</a>
+                                    <a href="?page=category_product" title="">Samsung</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Asus</a>
+                                    <a href="?page=category_product" title="">Xiaomi</a>
+                                </li>
+                                <li>
+                                    <a href="?page=category_product" title="">Huawei</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Laptop</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="?page=category_product" title="">Mac</a>
+                                </li>
+                                <li>
+                                    <a href="?page=category_product" title="">ASUS</a>
                                 </li>
                                 <li>
                                     <a href="?page=category_product" title="">Lenovo</a>
+                                </li>
+                                <li>
+                                    <a href="?page=category_product" title="">Dell</a>
                                 </li>
                             </ul>
                         </li> 
