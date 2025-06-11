@@ -95,7 +95,7 @@
                             <textarea name="address"></textarea>
                         </div>
                     </div>
-                    <input type="submit" name="btn_submit_crate" id="btn-submit" value="Tạo"
+                    <input type="submit" name="btn_submit_crate" id="btn-submit" value="Đăng ký"
                         style="height: 40px;
                                                                                                 border-radius: 60px;
                                                                                                 width: 150px;

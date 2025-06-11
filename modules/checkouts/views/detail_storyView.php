@@ -9,7 +9,7 @@
                         <a href="?page=home" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Mã đơn hàng [---> <?php echo $data[count($data) -1]; ?> <---]</a>
+                        <a href="" title="">Mã đơn hàng [---> <?php echo $data[count($data) -1]; ?> <---]< /a>
                     </li>
                 </ul>
             </div>
@@ -42,19 +42,20 @@
                             <td><?php echo $value['name']; ?> </td>
                             <td><?php echo $value['price'].' .VNĐ'; ?></td>
                             <td>
-                                <input type="text" name="num-order" value="<?php echo $value['qty'] ;?>" class="num-order">
+                                <input type="text" name="num-order" value="<?php echo $value['qty'] ;?>"
+                                    class="num-order">
                             </td>
                             <td><?php echo $value['sub_total_price'].' .VNĐ'; ?></td>
                         </tr>
                         <?php }}; ?>
 
                     </tbody>
-                    
+
                 </table>
             </div>
         </div>
         <div class="section" id="action-cart-wp">
-            
+
         </div>
     </div>
 </div>

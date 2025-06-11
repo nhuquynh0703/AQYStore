@@ -50,8 +50,9 @@
                             <td><?php echo $value['total_num_product']; ?></td>
                             <td><?php echo $value['total_price'].' .VNĐ' ?></td>
                             <td><?php echo $value['status'] ;?></td>
-                            <td><a href="?modules=checkouts&controllers=index&action=detailStory&idOrder=<?php echo $value['id']; ?>&code=<?php echo $value['code']; ?>" title="" class="name-product">Chi tiết</a></td>
-                           <?php }; ?>
+                            <td><a href="?modules=checkouts&controllers=index&action=detailStory&idOrder=<?php echo $value['id']; ?>&code=<?php echo $value['code']; ?>"
+                                    title="" class="name-product">Chi tiết</a></td>
+                            <?php }; ?>
                         </tr>
                     </tbody>
                 </table>

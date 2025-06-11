@@ -93,26 +93,27 @@
                         </tr>
                     </tbody> -->
                     <tfoot>
-                        <tr class="order-total">
-                            <td style="font-size: 28px;
+                        <tr style="margin-bottom: 20px" class="order-total">
+                            <td><strong style="font-size: 28px; 
     font-weight: 500;
-    color: #2d3748"><strong class="total-price">Mạng xã hội</strong></td>
+    color: #2d3748 " class="total-price">Mạng xã hội</strong></td>
                         </tr>
-                        <tr class="order-total" style="margin-top: 10px">
+                        <br>
+                        <tr class="order-total">
                             <td>
                                 <strong class="total-price">
                                     <ul>
-                                        <li style="display: inline-block; padding: 0px 20px; font-size: 50px;">
-                                            <a style="color:gray;" href="https://web.facebook.com/quangem2703"><i
-                                                    class="fa fa-facebook"></i></a>
+                                        <li
+                                            style="display: inline-block; padding: 0px 20px; font-size: 30px; margin-top: 25px;">
+                                            <a style="color:gray;" href="#"><i class="fa fa-facebook"></i></a>
                                         </li>
-                                        <li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
+                                        <li style="display: inline-block;padding: 0px 20px;font-size: 30px;">
                                             <a style="color:gray;" href="#"><i class="fa fa-twitter"></i></a>
                                         </li>
-                                        <li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
+                                        <li style="display: inline-block;padding: 0px 20px;font-size: 30px;">
                                             <a style="color:gray;" href="#"><i class="fa fa-google-plus"></i></a>
                                         </li>
-                                        <li style="display: inline-block;padding: 0px 20px;font-size: 50px;">
+                                        <li style="display: inline-block;padding: 0px 20px;font-size: 30px;">
                                             <a style="color:gray;" href="https://www.youtube.com/"><i
                                                     class="fa fa-youtube"></i></a>
                                         </li>

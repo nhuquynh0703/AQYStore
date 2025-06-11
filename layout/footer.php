@@ -3,7 +3,8 @@
         <div class="wp-inner clearfix">
             <div class="block" id="info-company">
                 <h3 class="title">AQYStore</h3>
-                <p class="desc">AQYStore luôn cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu đãi cực lớn cho khách hàng có thẻ thành viên.</p>
+                <p class="desc">AQYStore luôn cung cấp luôn là sản phẩm chính hãng có thông tin rõ ràng, chính sách ưu
+                    đãi cực lớn cho khách hàng có thẻ thành viên.</p>
                 <div id="payment">
                     <div class="thumb">
                         <img src="public/images/img-foot.png" alt="">
@@ -110,17 +111,19 @@
         </ul>
     </div>
 </div>
-<div id="btn-top"><img src="public/images/icon-to-top.png" alt=""/></div>
+<div id="btn-top"><img src="public/images/icon-to-top.png" alt="" /></div>
 <div id="fb-root"></div>
-<script>(function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id))
-            return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=849340975164592";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+<script>
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id))
+        return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=849340975164592";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
 </body>
+
 </html>
