@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost'; // Tên server
-$dbname = 'store'; // Tên cơ sở dữ liệu
+$dbname = 'aqystore'; // Tên cơ sở dữ liệu
 $username = 'root'; // Tên người dùng cơ sở dữ liệu
 $password = ''; // Mật khẩu của người dùng cơ sở dữ liệu
 
@@ -43,7 +43,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "https://localhost/store/vnpay_php/vnpay_return.php";
+$vnp_Returnurl = "https://localhost/aqystore/vnpay_php/vnpay_return.php";
 $vnp_TmnCode = "KXN2X303";//Mã website tại VNPAY 
 $vnp_HashSecret = "KDINGVFVSZVXMPVIPIYVDWZRNQLSXTKF"; //Chuỗi bí mật
 

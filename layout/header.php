@@ -22,7 +22,7 @@
     <body>
         <div id="site">
 <div id="header-wp">  
-                    <div id="head-top" class="clearfix"  style=" background: #4653C1!important;">
+                    <div id="head-top" class="clearfix"  style=" !important;">
                         <div class="wp-inner">
                             <a href="" title="" id="payment-link" class="fl-left">Hình thức thanh toán</a>
                             <div id="main-menu-wp" class="fl-right">
@@ -31,9 +31,9 @@
                                     <li>
                                         <a href="?modules=blogs&action=list" title="">Blog</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="?modules=contacts&action=introduce" title="">Giới thiệu</a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a href="?modules=contacts&action=contact" title="">Liên hệ</a>
                                     </li>
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="head-body" class="clearfix head-body" style="background: #5D6EEB !important;">
+                    <div id="head-body" class="clearfix head-body" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;">
                         <div class="wp-inner">
                             <a href="?modules=home" title="" id="logo" class="fl-left"><img src="public/images/logoaha.png"/></a>
 

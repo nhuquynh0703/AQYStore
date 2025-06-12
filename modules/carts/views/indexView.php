@@ -18,7 +18,7 @@
     <div id="wrapper" class="wp-inner clearfix">
         <div class="section" id="info-cart-wp">
             <div class="section-detail table-responsive">
-                <table class="table">
+                <table class="table table1" >
                     <form action="?modules=carts&controllers=index&action=update" method="post">
                     <thead>
                         <tr>
@@ -67,7 +67,7 @@
                             <td colspan="7">
                                 <div class="clearfix">
                                     <div  class="fl-right">
-                                        <a style="margin-right: 660px;background-color: #dc5c2f;" href="?modules=checkouts&controllers=index&action=story" title="" id="checkout-cart">Lịch sử đơn hàng</a>
+                                        <a style="margin-right: 660px;background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);;" href="?modules=checkouts&controllers=index&action=story" title="" id="checkout-cart">Lịch sử đơn hàng</a>
                                         <input type="submit" id="update-cart" name="btn-update_cart" value="Cập nhật giỏ hàng">
                                         <a href="?modules=checkouts&controllers=index&action=index" title="" id="checkout-cart">Thanh toán</a>
                                     </div>

@@ -108,6 +108,10 @@
     padding: 15px 30px 15px 50px;
 }
 
+#advisory-wp:hover{
+    cursor: pointer;
+}
+
 #advisory-wp:before {
     position: absolute;
     content: '\f2a0';

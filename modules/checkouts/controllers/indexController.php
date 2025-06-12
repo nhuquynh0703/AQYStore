@@ -5,12 +5,6 @@ function construct() {
 	load_model('index');
 }
 
-
-
-
-
-
-
 function indexAction(){
 
 	$data=array();
@@ -20,9 +14,6 @@ function indexAction(){
 	load_view('index',$data);
 
 }
-
-
-
 
 function storyAction(){
 	$data = array();
@@ -35,8 +26,6 @@ function storyAction(){
 	load_view('story',$data);
 
 }
-
-
 
 function detailStoryAction(){
 	$id = $_GET['idOrder'];

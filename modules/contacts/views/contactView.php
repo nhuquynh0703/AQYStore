@@ -96,7 +96,7 @@
                         <tr style="margin-bottom: 20px" class="order-total">
                             <td><strong style="font-size: 28px; 
     font-weight: 500;
-    color: #2d3748 " class="total-price">Mạng xã hội</strong></td>
+    color: #2d3748 " class="total-price"></strong></td>
                         </tr>
                         <br>
                         <tr class="order-total">

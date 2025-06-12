@@ -105,19 +105,36 @@
     padding: 6px 10px;
     border: 2px solid #ccc;
     margin-bottom: 10px;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+#form-reg input[type="email"]:focus{
+    outline: none !important;
+    border-color: #667eea !important;
+    background: white !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    transform: translateY(-2px) !important;
 }
 
 #form-reg #sm-reg {
     display: block;
     width: 100%;
-    background: #5D6EEB;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     border: none;
     outline: none;
     padding: 10px 0px;
     text-transform: uppercase;
     color: #fff;
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto Regular';
     line-height: normal;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+#form-reg #sm-reg:hover{
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
 }
 
 /* #form-reg #sm-reg:hover {
@@ -141,7 +158,7 @@
 :-ms-input-placeholder {
     /* IE 10+ */
     color: #999;
-    font-family: 'Roboto Light';
+    font-family: 'Roboto Regular';
     font-size: 13px;
 }
 

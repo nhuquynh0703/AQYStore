@@ -93,7 +93,7 @@
                             $trangthai="Thanh Cong";
                         }
                         $host = 'localhost'; // Tên server
-                        $dbname = 'store'; // Tên cơ sở dữ liệu
+                        $dbname = 'aqystore'; // Tên cơ sở dữ liệu
                         $username = 'root'; // Tên người dùng cơ sở dữ liệu
                         $password = ''; // Mật khẩu của người dùng cơ sở dữ liệu
 
@@ -124,7 +124,7 @@
             </p>
 
             <h1>
-                <a href="http://localhost/store/"> Chuyển hướng về trang chủ</a>
+                <a href="http://localhost/aqystore/"> Chuyển hướng về trang chủ nhé</a>
             </h1>
             <footer class="footer">
                    <p>&copy; VNPAY <?php echo date('Y')?></p>

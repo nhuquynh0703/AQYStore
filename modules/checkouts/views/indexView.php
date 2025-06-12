@@ -26,13 +26,15 @@
             </div>
         </div>
     </div>
-    <div id="wrapper" class="wp-inner clearfix">
-        <div class="section" id="customer-info-wp">
-            <div class="section-head">
-                <h1 class="section-title">Thông tin khách hàng</h1>
-            </div>
-            <div class="section-detail">
-                <form method="post" action="?modules=checkouts&controllers=index&action=checkout" name="form-checkout">
+    <form method="post" action="?modules=checkouts&controllers=index&action=checkout" name="form-checkout">
+
+        <div id="wrapper" class="wp-inner clearfix">
+
+            <div class="section" id="customer-info-wp">
+                <div class="section-head">
+                    <h1 class="section-title">Thông tin khách hàng</h1>
+                </div>
+                <div class="section-detail">
 
                     <?php if(!empty($data)) { foreach ($data as  $value) {?>
                     <div class="form-row clearfix">
@@ -83,37 +85,37 @@
                             <textarea name="note"></textarea>
                         </div>
                     </div>
-                </form>
+
+                </div>
             </div>
-        </div>
-        <div class="section" id="order-review-wp">
-            <div class="section-head">
-                <h1 class="section-title">Thông tin đơn hàng</h1>
-            </div>
-            <div class="section-detail">
-                <table class="shop-table">
-                    <thead>
-                        <tr>
-                            <td>Sản phẩm</td>
-                            <td style="margin-left: 10px">Tổng</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if(isset($_SESSION['cart']['buy']) ){?>
-                        <?php foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>
-                        <tr class="cart-item">
-                            <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity">x
-                                    <?php echo $value['qty']; ?></strong></td>
-                            <td class="product-total"><?php echo $value['sub_total']; ?></td>
-                        </tr>
-                        <?php }}; ?>
-                    </tbody>
-                    <tfoot>
-                        <tr class="order-total">
-                            <td>Tổng đơn hàng:</td>
-                            <td>
-                                <strong class="total-price">
-                                    <?php if(isset($_SESSION['cart']['buy'])) 
+            <div class="section" id="order-review-wp">
+                <div class="section-head">
+                    <h1 class="section-title">Thông tin đơn hàng</h1>
+                </div>
+                <div class="section-detail">
+                    <table class="shop-table" width="500px" height="20px">
+                        <thead>
+                            <tr>
+                                <td>Sản phẩm</td>
+                                <td>Tổng</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(isset($_SESSION['cart']['buy']) ){?>
+                            <?php foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>
+                            <tr class="cart-item">
+                                <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity">x
+                                        <?php echo $value['qty']; ?></strong></td>
+                                <td class="product-total"><?php echo $value['sub_total']; ?></td>
+                            </tr>
+                            <?php }}; ?>
+                        </tbody>
+                        <tfoot>
+                            <tr class="order-total">
+                                <td>Tổng đơn hàng:</td>
+                                <td>
+                                    <strong class="total-price">
+                                        <?php if(isset($_SESSION['cart']['buy'])) 
                                             {$tong= $_SESSION['cart']['info']['total']; 
                                             echo $tong." VND"; }
                                             else {
@@ -121,53 +123,55 @@
                                                 echo "VND";
                                             } ?>
 
-                                </strong>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
 
-                <div id="payment-checkout-wp">
-                    <ul id="payment_methods">
-                        <!-- <li>
+                    <div id="payment-checkout-wp">
+                        <ul id="payment_methods">
+                            <!-- <li>
                                 <input type="radio" id="direct-payment" name="redirect" value="VNPAY">
                                 <label for="direct-payment">Thanh toán online VNpay</label>
                             </li> -->
-                        <li>
+                            <li>
 
-                        </li>
-                        <li>
-                            <input style="width: 25%" type="hidden" id="payment-home" name="payment_method"
-                                value="home_payment">
-                            <!-- <label for="payment-home">Thanh toán tại nhà</label> -->
-                        </li>
-                    </ul>
+                            </li>
+                            <li>
+                                <input type="hidden" id="payment-home" name="payment_method" value="home_payment">
+                                <!-- <label for="payment-home">Thanh toán tại nhà</label> -->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="place-order-wp clearfix">
+                        <input type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
+                    </div>
                 </div>
-
-                <div class="place-order-wp clearfix">
-                    <input type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
-                </div>
-
-                <div>
-                    </form>
-                    <form action="./modules/checkouts/views/Xulypay.php" method="POST">
-                        <input type="hidden" name="amount" value="<?php echo $tong;?>">
+            </div>
+            <div>
+    </form>
 
 
-                        <?php if(!empty($data)) { foreach ($data as  $value) {?>
-
-                        <input type="hidden" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
-
-                        <input type="hidden" name="email" id="email" value="<?php echo $value['mail']; ?>">
-
-                        <input type="hidden" name="address" id="address" value="<?php echo $value['address']; ?>">
-
-                        <input type="hidden" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
-
-                        <?php }}else{echo("no data");}?>
+    <form action="./modules/checkouts/views/Xulypay.php" method="POST">
+        <input type="hidden" name="amount" value="<?php echo $tong;?>">
 
 
-                        <button style="
+        <?php if(!empty($data)) { foreach ($data as  $value) {?>
+
+        <input type="hidden" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
+
+        <input type="hidden" name="email" id="email" value="<?php echo $value['mail']; ?>">
+
+        <input type="hidden" name="address" id="address" value="<?php echo $value['address']; ?>">
+
+        <input type="hidden" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
+
+        <?php }}else{echo("no data");}?>
+
+
+        <button style="
                    width: 100% !important;
     padding: 16px !important;
     border: none !important;
@@ -184,21 +188,21 @@
     margin-top: 20px !important;
 
             " name="redirect">Thanh toán VNpay</button>
-                    </form>
-                </div>
+    </form>
+</div>
 
-            </div>
-            <!-- <form action="./Xulypay.php" method=post>   
+
+<!-- <form action="./Xulypay.php" method=post>   
                             <label for="payment-home">Thanh toán online</label>
                             <input  type="submit" name="redirect" >
                 </form> -->
 
 
-        </div>
+</div>
 
 
 
-    </div>
+</div>
 </div>
 
 <?php get_footer(); ?>
