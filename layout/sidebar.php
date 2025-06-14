@@ -123,7 +123,7 @@
                 </div> 
             </div>
             <div class="section" id="selling-wp">
-                <div class="section-head">
+                <!-- <div class="section-head">
                     <h3 class="section-title">Sản phẩm bán chạy</h3>
                 </div>
                 <div class="section-detail">
@@ -147,6 +147,12 @@
                     <?php }}; ?>
                         
                     </ul>
+                </div> -->
+                <div class="section-detail banner1">
+                    <img src="public/images/banner2.webp" alt="">
+                </div>
+                <div class="section-detail">
+                    
                 </div>
             </div>
             <div class="section" id="banner-wp">

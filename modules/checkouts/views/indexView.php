@@ -146,7 +146,7 @@
                     </div>
 
                     <div class="place-order-wp clearfix">
-                        <input type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
+                        <input style="width: 25% !important;margin-left: 224px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;" type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
                     </div>
                 </div>
             </div>
@@ -155,40 +155,46 @@
 
 
     <form action="./modules/checkouts/views/Xulypay.php" method="POST">
-        <input type="hidden" name="amount" value="<?php echo $tong;?>">
+            <input type="hidden" name="amount" value="<?php echo $tong;?>">
 
 
-        <?php if(!empty($data)) { foreach ($data as  $value) {?>
+            <?php if(!empty($data)) { foreach ($data as  $value) {?>
 
-        <input type="hidden" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
+            <input type="hidden" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
 
-        <input type="hidden" name="email" id="email" value="<?php echo $value['mail']; ?>">
+            <input type="hidden" name="email" id="email" value="<?php echo $value['mail']; ?>">
 
-        <input type="hidden" name="address" id="address" value="<?php echo $value['address']; ?>">
+            <input type="hidden" name="address" id="address" value="<?php echo $value['address']; ?>">
 
-        <input type="hidden" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
+            <input type="hidden" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
 
-        <?php }}else{echo("no data");}?>
+            <?php }}else{echo("no data");}?>
 
 
-        <button style="
-                   width: 100% !important;
-    padding: 16px !important;
+            <button class="btn_vnpay"style="
+                    
+    width: 16%;
+    padding: 12px 25px;
     border: none !important;
     border-radius: 12px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
+    font-size: 13px !important;
+    font-weight: normal;
     cursor: pointer !important;
-    transition: all 0.3s ease !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white !important;
     height: auto !important;
-    margin-top: 20px !important;
+    position: absolute;
+    right: 14px;
+    bottom: 60px;
+    bottom: 262px;
+    transition: color 0.3s ease !important;
+    z-index: 99;
+
 
             " name="redirect">Thanh toán VNpay</button>
-    </form>
+        </form>
 </div>
 
 

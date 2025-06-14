@@ -2,9 +2,7 @@
 
 
 function construct() {
-
 	load_model('index');
-
 }
 
 function searchAction(){
@@ -38,9 +36,6 @@ function searchAction(){
 	$data = [$res,$num,$page,$key_word,$data_tmp];
 	load_view('index',$data);
 }
-
-
-
 
 function filterAction(){
 	$r_price = null;

@@ -86,7 +86,7 @@
     padding: 12px 25px;
     text-transform: uppercase;
     font-size: 13px;
-    border-radius: 5px;
+    border-radius: 12px;
     font-family: 'Roboto Regular';
     font-weight: normal;
     border: none;
@@ -107,7 +107,7 @@
     color: white;
     text-transform: uppercase;
     font-size: 13px;
-    border-radius: 5px;
+    border-radius: 12px;
     margin-right: 5px;
     border: 1px solid #d6d6d6;
     font-family: 'Roboto Regular';
@@ -119,10 +119,7 @@
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
 }
 
-#checkout-cart:hover {
-    background: #28288c;
-    ;
-}
+
 
 #cart-wp table tfoot tr td #action-cart a:nth-child(2) {
     margin-right: 0;

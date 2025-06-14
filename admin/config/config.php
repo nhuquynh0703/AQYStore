@@ -2,7 +2,7 @@
 session_start();
 
 
-$config['base_url'] = "http://localhost/STORE/admin/";
+$config['base_url'] = "http://localhost/AQYSTORE/admin/";
 
 
 $config['default_module'] = 'home';

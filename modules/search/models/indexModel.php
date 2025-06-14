@@ -1,8 +1,7 @@
 <?php 
 
 function searchProduct($data){
-
-	return db_fetch_array("SELECT * FROM `tbl_product` WHERE `name` LIKE '%$data%'");
+	return db_fetch_array("SELECT * FROM `tbl_product` WHERE `name` LIKE '%$data%' ");
 }
 
 
@@ -39,6 +38,4 @@ function getProductFilter($data){
 
 
 }
-
-
  ?>

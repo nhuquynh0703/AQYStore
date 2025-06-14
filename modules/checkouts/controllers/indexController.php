@@ -44,12 +44,6 @@ function detailStoryAction(){
 	load_view('detail_story',$data);
 }
 
-
-
-
-
-
-
 function checkoutAction(){
 
 	if(!empty($_POST['btn_submit'])){
@@ -135,9 +129,6 @@ function checkoutAction(){
 
 	}
 }
-
-
-
 
 
  ?>

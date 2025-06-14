@@ -9,7 +9,7 @@
                         <a href="?page=home" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Mã đơn hàng [---> <?php echo $data[count($data) -1]; ?> <---]< /a>
+                        <a href="" title="">Mã đơn hàng
                     </li>
                 </ul>
             </div>

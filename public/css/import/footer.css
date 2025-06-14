@@ -129,7 +129,7 @@
     font-family: 'Roboto Regular';
     line-height: normal;
     border-radius: 12px !important;
-    transition: all 0.3s ease !important;
+    transition: color 0.3s ease !important;
 }
 
 #form-reg #sm-reg:hover{
