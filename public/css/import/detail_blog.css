@@ -14,7 +14,7 @@
 
 #detail-blog-wp .section-title {
     display: block;
-    font-size: 50px;
+    font-size: 34px;
     font-weight: normal;
     line-height: normal;
     font-family: "Roboto Regular";
@@ -50,7 +50,9 @@
     padding-bottom: 10px;
     text-align: justify;
 }
-
+#detail-blog-wp .detail p small {
+    font-size: 12px;
+}
 #detail-blog-wp .detail p strong {
     font-family: 'Roboto Medium';
     font-weight: normal;
