@@ -37,8 +37,8 @@
                             <span class="title">Sản phẩm: </span>
                             <span class="status" style="background-color: green; color: white; border-radius: 5px;"><?php echo $data['1']['status']; ?></span>
                         </div>
-                        <p class="price"><?php echo $data['1']['promotional_price'].' .VNĐ' ;?></p>
-                        <div id="num-order-wp">
+                        <p class="price"><?php echo number_format($data['1']['promotional_price'], 0, ',', '.') . ' VNĐ';?></p>
+                                                <div id="num-order-wp">
                             <p style="display: inline-block; ">Số lượng : </p>
                             <input type="text" name="" style="width: 40px;text-align: center;" value="1">
                         </div>
@@ -68,8 +68,8 @@
                             </a>
                             <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="product-name"><?php echo $value['name']; ?></a>
                             <div class="price">
-                                <span style="display: block;" class="new"><?php echo $value['promotional_price'].'.VND'; ?></span>
-                                <span style="display: block;" class="old"><?php echo $value['price'].'.VND'; ?></span>
+                                <span style="display: block;" class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').' VND'; ?></span>
+                                <span style="display: block;" class="old"><?php echo $value['price'].' VND'; ?></span>
                             </div>
                             <div class="action clearfix">
                                <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=add&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> " title="" class="add-cart fl-left">Thêm giỏ hàng</a>

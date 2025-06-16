@@ -23,7 +23,7 @@
                             </ul>
                         </li> 
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Máy tính bảng</a>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Tablet</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">iPad</a>

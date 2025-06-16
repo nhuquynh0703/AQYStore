@@ -5,9 +5,6 @@ function construct() {
 	load_model('index');
 }
 
-
-
-
 function indexAction(){
 
 	if(isset($_GET['report']))
@@ -23,7 +20,6 @@ function logoutAction(){
 }
 
 function loginAction(){
-
 	$username;
 	$password;
 	$err = array();
@@ -51,11 +47,9 @@ function loginAction(){
 				$_SESSION['fullname'] = $dataUser['fullname'];
 				header('location:?modules=home');
 			}else{
-
 				echo " <script type='text/javascript'> alert('Thông tin tải khoản không đúng!!!');</script>";
 			}
 		}else{
-
 			echo " <script type='text/javascript'> alert('Bạn phải điền đầy đủ thông tin!!!');</script>";
 		}
 
@@ -64,7 +58,6 @@ function loginAction(){
 	load_view('index');
 
 }
-
 
 function crateAcountAction(){
 

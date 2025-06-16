@@ -24,7 +24,7 @@
                         <?php if(!empty($data)) foreach ($data['0'] as  $value) {?>
                         <li class="clearfix">
                             <a href="?modules=blogs&controllers=index&action=detail&id=<?php echo $value['id']; ?>" class="thumb fl-left">
-                                <img src="<?php echo $value['image']; ?>" alt="">
+                                <img class="pic-blog" src="<?php echo $value['image']; ?>" alt="">
 
                             </a>
                             <div class="info fl-right">
@@ -49,6 +49,7 @@
                 </div>
             </div>
         </div>
+        
 <?php get_sidebar(); ?>
     </div>
 </div>

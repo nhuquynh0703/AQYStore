@@ -21,6 +21,28 @@
             </div>
             <div class="section-detail">
                 <form method="POST" action="" name="form-checkout">
+                    <?php if(!empty($data)) { foreach ($data as  $value) {?>
+                    <div class="form-row clearfix">
+                        <div class="form-col fl-left">
+                            <label for="fullname">Họ tên</label>
+                            <input type="text" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
+                        </div>
+                        <div class="form-col fl-right">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" value="<?php echo $value['mail']; ?>">
+                        </div>
+                    </div>
+                    <div class="form-row clearfix">
+                        <div class="form-col fl-left">
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" name="address" id="address" value="<?php echo $value['address']; ?>">
+                        </div>
+                        <div class="form-col fl-right">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
+                        </div>
+                    </div>
+                    <?php }};if(empty($data)){ ?>
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
                             <label for="fullname">Họ tên</label>
@@ -41,6 +63,7 @@
                             <input type="tel" name="phone" id="phone">
                         </div>
                     </div>
+                    <?php }; ?>
                     <div class="form-row">
                         <div class="form-col">
                             <label for="notes">Nội dung</label>

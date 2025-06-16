@@ -9,7 +9,7 @@
                     <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Điện Thoại</a>
                     
                 </li> -->
-                <!-- <li>
+    <!-- <li>
                     <a href="?modules=products&controllers=index&action=show&id_cat=14" title="">Máy Tính Bảng</a>
                     
                 </li>
@@ -29,7 +29,7 @@
                 <li>
                     <a href="?page=category_product" title="">Thiết Bị Văn Phòng</a>
                 </li> -->
-            <!-- </ul>
+    <!-- </ul>
         </div>
     </div> -->
     <div class="section" id="filter-product-wp">
@@ -76,7 +76,7 @@
                     <tbody>
                         <tr>
                             <td><input type="radio" name="r-brand" id="i1" value="2"></td>
-                            <td><label for="i1">Apple</label></td>
+                            <td><label for="i1">iPhone</label></td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="r-brand" id="i2" value="1"></td>
@@ -84,11 +84,11 @@
                         </tr>
                         <tr>
                             <td><input type="radio" name="r-brand" id="i3" value="3"></td>
-                            <td><label for="i3">Sony</label></td>
+                            <td><label for="i3">Xiaomi</label></td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="r-brand" id="i4" value="4"></td>
-                            <td><label for="i4">Nokia</label></td>
+                            <td><label for="i4">OPPO</label></td>
                         </tr>
                     </tbody>
                 </table>
@@ -113,7 +113,7 @@
                         </tr>
                     </tbody>
                 </table> -->
-                <input style="width: 100%;color: white; background-color: #95d895;border-radius: 5px; border: none; " type="submit" name="btn_filter" value="Áp dụng">
+                <input class="filter" type="submit" name="btn_filter" value="Áp dụng">
             </form>
         </div>
     </div>

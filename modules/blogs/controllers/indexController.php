@@ -6,12 +6,6 @@ function construct() {
 	load_model('index');
 }
 
-
-
-
-
-
-
 function listAction(){
 
 	$data_tmp = getAll();

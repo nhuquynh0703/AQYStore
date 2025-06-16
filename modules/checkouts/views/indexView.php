@@ -36,6 +36,7 @@
                 </div>
                 <div class="section-detail">
 
+
                     <?php if(!empty($data)) { foreach ($data as  $value) {?>
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
@@ -146,7 +147,9 @@
                     </div>
 
                     <div class="place-order-wp clearfix">
-                        <input style="width: 25% !important;margin-left: 224px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;" type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
+                        <input
+                            style="width: 25% !important;margin-left: 224px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;"
+                            type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
                     </div>
                 </div>
             </div>
@@ -155,23 +158,23 @@
 
 
     <form action="./modules/checkouts/views/Xulypay.php" method="POST">
-            <input type="hidden" name="amount" value="<?php echo $tong;?>">
+        <input type="hidden" name="amount" value="<?php echo $tong;?>">
 
 
-            <?php if(!empty($data)) { foreach ($data as  $value) {?>
+        <?php if(!empty($data)) { foreach ($data as  $value) {?>
 
-            <input type="hidden" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
+        <input type="hidden" name="fullname" id="fullname" value="<?php echo $value['fullname']; ?>">
 
-            <input type="hidden" name="email" id="email" value="<?php echo $value['mail']; ?>">
+        <input type="hidden" name="email" id="email" value="<?php echo $value['mail']; ?>">
 
-            <input type="hidden" name="address" id="address" value="<?php echo $value['address']; ?>">
+        <input type="hidden" name="address" id="address" value="<?php echo $value['address']; ?>">
 
-            <input type="hidden" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
+        <input type="hidden" name="phone" id="phone" value="<?php echo $value['phone']; ?>">
 
-            <?php }}else{echo("no data");}?>
+        <?php }}else{echo("no data");}?>
 
 
-            <button class="btn_vnpay"style="
+        <button class="btn_vnpay" style="
                     
     width: 16%;
     padding: 12px 25px;
@@ -194,7 +197,7 @@
 
 
             " name="redirect">Thanh toán VNpay</button>
-        </form>
+    </form>
 </div>
 
 
