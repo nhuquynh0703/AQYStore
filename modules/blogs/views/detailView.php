@@ -6,10 +6,13 @@
             <div class="secion-detail">
                 <ul class="list-item clearfix">
                     <li>
-                        <a href="" title="">Trang chủ</a>
+                        <a href="?page=home" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Blog</a>
+                        <a href="?modules=blogs&action=list" title="">Blog</a>
+                    </li>
+                    <li>
+                        <a href="?modules=blogs&controllers=index&action=detail&id=<?php echo $data['id']; ?>" title=""><?php echo $data['title']; ?></a>
                     </li>
                 </ul>
             </div>

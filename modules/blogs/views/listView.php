@@ -6,10 +6,10 @@
             <div class="secion-detail">
                 <ul class="list-item clearfix">
                     <li>
-                        <a href="" title="">Trang chủ</a>
+                        <a href="?page=home" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Blog</a>
+                        <a href="?modules=blogs&action=list" title="">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -17,7 +17,14 @@
         <div class="main-content fl-right">
             <div class="section" id="list-blog-wp">
                 <div class="section-head clearfix">
-                    <h3 class="section-title">Blog</h3>
+                    <h3 class="section-title">Tin tức & Blog công nghệ</h3>
+                    <ul class="menu">
+                        <li class="item">
+                            <a href="#">Khoa học công nghệ</a>
+                        </li>
+                        <li class="item">
+                            <a href="#">Thiết bị</a>
+                    </ul>
                 </div>
                 <div class="section-detail">
                     <ul class="list-item">
