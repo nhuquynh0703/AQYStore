@@ -23,7 +23,7 @@
                             </ul>
                         </li> 
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Tablet</a>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=12" title="">Tablet</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">iPad</a>
@@ -40,7 +40,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Laptop</a>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=14" title="">Laptop</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Mac</a>
