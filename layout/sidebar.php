@@ -9,21 +9,21 @@
                             <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Điện Thoại</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=category_product" title="">iPhone</a>
+                                    <a href="?modules=productnews&controllers=index&action=show&id_cat=13&id_brand=1" title="">iPhone</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Samsung</a>
+                                    <a href="?modules=productnews&controllers=index&action=show&id_cat=13&id_brand=2" title="">Samsung</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Xiaomi</a>
+                                    <a href="?modules=productnews&controllers=index&action=show&id_cat=13&id_brand=3" title="">Xiaomi</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">OPPO</a>
+                                    <a href="?modules=productnews&controllers=index&action=show&id_cat=13&id_brand=4" title="">OPPO</a>
                                 </li>
                             </ul>
                         </li> 
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Tablet</a>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=14" title="">Tablet</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">iPad</a>
@@ -40,7 +40,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=13" title="">Laptop</a>
+                            <a href="?modules=products&controllers=index&action=show&id_cat=12" title="">Laptop</a>
                             <ul class="sub-menu">
                                 <li>
                                     <a href="?page=category_product" title="">Mac</a>

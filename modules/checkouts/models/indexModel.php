@@ -27,6 +27,7 @@ function getProductByID($id){
 
 
 
+
 function insertOrder($custom_id, $total_price, $total_num_product,$create_date, $note, $payment_method, $status,$id_cart,$time,$code){
 	$data = [
 		'custom_id ' =>$custom_id ,
@@ -88,9 +89,5 @@ function sendMail($id_order){
 	";
 
 }
-
-
-
-
 
  ?>

@@ -1,3 +1,5 @@
+
+
 <?php get_header(); ?>
 <div id="main-content-wp" class="checkout-page">
     <div class="section" id="breadcrumb-wp">
@@ -20,7 +22,7 @@
                 <h1 class="section-title">Đóng góp ý kiến của khách hàng</h1>
             </div>
             <div class="section-detail">
-                <form method="POST" action="" name="form-checkout">
+                <form method="POST" action="?modules=contacts&controllers=index&action=contact" name="form-contact">
                     <?php if(!empty($data)) { foreach ($data as  $value) {?>
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
@@ -67,7 +69,7 @@
                     <div class="form-row">
                         <div class="form-col">
                             <label for="notes">Nội dung</label>
-                            <textarea name="note"></textarea>
+                            <textarea name="note" required></textarea>
                         </div>
                     </div>
                     <input type="submit" name="btn_submit_crate" id="btn-submit" value="Gửi"

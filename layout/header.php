@@ -13,12 +13,18 @@
     <link href="public/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="public/style.css" rel="stylesheet" type="text/css" />
     <link href="public/responsive.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap 5 JS (để nút close hoạt động) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="public/js/elevatezoom-master/jquery.elevatezoom.js" type="text/javascript"></script>
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -26,7 +32,7 @@
         <div id="header-wp">
             <div id="head-top" class="clearfix" style=" !important;">
                 <div class="wp-inner">
-                    <a href="" title="" id="payment-link" class="fl-left">Hình thức thanh toán</a>
+                    <a href="" title="" id="payment-link" class="fl-left">    Always Quality for You</a>
                     <div id="main-menu-wp" class="fl-right">
                         <ul id="main-menu" class="clearfix">
 
@@ -37,7 +43,7 @@
                                         <a href="?modules=contacts&action=introduce" title="">Giới thiệu</a>
                                     </li> -->
                             <li>
-                                <a href="?modules=contacts&action=contact" title="">Liên hệ</a>
+                                <a href="?modules=contacts&action=index" title="">Liên hệ</a>
                             </li>
                             <!-- <li>
                                         <a href="?modules=checkouts&controllers=index&action=story" title="">Lịch sử mua hàng</a>
@@ -65,7 +71,7 @@
                 </div>
             </div>
             <div id="head-body" class="clearfix head-body"
-                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;">
+                style="background: #5D6EEB !important;">
                 <div class="wp-inner">
                     <a href="?modules=home" title="" id="logo" class="fl-left"><img
                             src="public/images/logoaha.png" /></a>
@@ -97,7 +103,8 @@
                                 <!-- giỏ hàng -->
                                 <p class="desc">Có
                                     <span><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder']; else echo '0'; ?>
-                                        sản phẩm</span> trong giỏ hàng</p>
+                                        sản phẩm</span> trong giỏ hàng
+                                </p>
                                 <ul class="list-cart">
                                     <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) {?>
                                     <?php foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>

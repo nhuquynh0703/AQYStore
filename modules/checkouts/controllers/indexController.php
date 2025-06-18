@@ -6,7 +6,6 @@ function construct() {
 }
 
 function indexAction(){
-
 	$data=array();
 	if(!empty($_SESSION['id_customer'])){
 		$data[] = getUserById($_SESSION['id_customer']);
