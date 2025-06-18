@@ -6,10 +6,10 @@
             <div class="secion-detail">
                 <ul class="list-item clearfix">
                     <li>
-                        <a href="" title="">Trang chủ</a>
+                        <a href="?modules=home" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="" title="">Search</a>
+                        <a href="" title="">Tìm kiếm</a>
                     </li>
                 </ul>
             </div>

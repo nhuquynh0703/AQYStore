@@ -6,7 +6,7 @@
             <div class="secion-detail">
                 <ul class="list-item clearfix">
                     <li>
-                        <a href="" title="">Trang chủ</a>
+                        <a href="?modules=home" title="">Trang chủ</a>
                     </li>
                     <li>
                         <a href="" title=""><?php echo ($data['0']['name']) ;?></a>
