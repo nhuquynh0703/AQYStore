@@ -17,6 +17,7 @@ function logoutAction(){
 	
 	logout();
 	header('location:?modules=home');
+	exit();
 }
 
 function loginAction(){
@@ -46,8 +47,9 @@ function loginAction(){
 				$_SESSION['username'] = $dataUser['username'];
 				$_SESSION['fullname'] = $dataUser['fullname'];
 				header('location:?modules=home');
+				exit();
 			}else{
-				echo " <script type='text/javascript'> alert('Thông tin tải khoản không đúng!!!');</script>";
+				echo " <script type='text/javascript'> alert('Thông tin tài khoản không đúng!!!');</script>";
 			}
 		}else{
 			echo " <script type='text/javascript'> alert('Bạn phải điền đầy đủ thông tin!!!');</script>";
@@ -60,13 +62,6 @@ function loginAction(){
 }
 
 function crateAcountAction(){
-
-	$username;
-	$password;
-	$mail;
-	$phone;
-	$fullname;
-	$address;
 	$err = array();
 
 	if(!empty($_POST['btn_submit_crate'])){
@@ -131,7 +126,62 @@ function crateAcountAction(){
 	load_view('index');
 }
 
+function infoAction(){
+    $id = $_SESSION['id_customer'];
+    $dataUser = getUserInfo($id);
+    if ($dataUser) {
+        $_SESSION['username'] = $dataUser['username'];
+        $_SESSION['fullname'] = $dataUser['fullname'];
+        $_SESSION['mail'] = $dataUser['mail'];
+        $_SESSION['phone'] = $dataUser['phone'];
+        $_SESSION['address'] = $dataUser['address'];
+    }
+    load_view('info');
+}
+function infoUpdateAction(){
+	$err = array();
 
+	if(!empty($_POST['btn_update'])){
+
+		if (!empty($_POST['fullname'])) {
+			$fullname = $_POST['fullname'];
+		}else{
+			$err['fullname'] = "fullname không được để rỗng";
+		}
+
+		if (!empty($_POST['mail'])) {
+			$mail = $_POST['mail'];
+		}else{
+			$err['mail'] = "mail không được để rỗng";
+		}
+
+		if (!empty($_POST['phone'])) {
+			$phone = $_POST['phone'];
+		}else{
+			$err['phone'] = "phone không được để rỗng";
+		}
+
+		if(empty($err)){
+			$id = $_SESSION['id_customer']; // Lấy id user từ session
+			updateUserInfo($id, $fullname, $mail, $phone);
+			echo " <script type='text/javascript'> alert('Cập nhật thông tin thành công!!!');</script>";
+			 $_SESSION['fullname'] = $fullname;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['phone'] = $phone;
+
+            // Chuyển hướng
+            header('Location: ?modules=users&controllers=index&action=info');
+			exit();
+		}else{
+
+			echo " <script type='text/javascript'> alert('Bạn phải điền đầy đủ thông tin!!!');</script>";
+			
+		}
+		
+		
+	}
+	load_view('info');
+}
 
 
 

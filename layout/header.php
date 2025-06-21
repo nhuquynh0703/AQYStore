@@ -33,18 +33,15 @@
                             <li>
                                 <a href="?modules=blogs&action=list" title="">Blog</a>
                             </li>
-                            <!-- <li>
-                                        <a href="?modules=contacts&action=introduce" title="">Giới thiệu</a>
-                                    </li> -->
                             <li>
                                 <a href="?modules=contacts&action=contact" title="">Liên hệ</a>
                             </li>
-                            <!-- <li>
-                                        <a href="?modules=checkouts&controllers=index&action=story" title="">Lịch sử mua hàng</a>
-                                    </li> -->
                             <li>
-                                <a href="?modules=users&action=index"
-                                    title=""><?php if(!empty($_SESSION['fullname'])) echo $_SESSION['fullname'];else echo "Đăng nhập"; ?></a>
+                                <?php if (!empty($_SESSION['fullname'])): ?>
+                                    <a href="?modules=users&controllers=index&action=info"><?php echo $_SESSION['fullname']; ?></a>
+                                <?php else: ?>
+                                    <a href="?modules=users&action=index">Đăng nhập</a>
+                                <?php endif; ?>
                             </li>
                             <?php if(!empty($_SESSION['fullname'])) { ?>
                             <li>
@@ -52,14 +49,6 @@
                             </li>
                             <?php }; ?>
 
-
-                            <!--     <li>
-                                        <a href="?modules=users&controllers=index&action=index" title="">Đăng kí</a>
-                                    </li>
-                                    <li>
-                                        <a href="?modules=users&controllers=index&action=index" title="">Đăng nhập</a>
-                                    </li> -->
-                            <a style="display: inline;" href=""></a>
                         </ul>
                     </div>
                 </div>
