@@ -100,3 +100,8 @@ function updateUserInfo($id, $fullname, $mail, $phone){
 	return db_update("tbl_customer", $data, "`id` = {$id}");
 
 }
+
+
+function updateUserPassword($id, $new_password) {
+    return db_update('tbl_customer', ['password' => $new_password], "`id` = '{$id}'");
+}

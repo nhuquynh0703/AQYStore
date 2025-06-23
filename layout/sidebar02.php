@@ -75,11 +75,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="radio" name="r-brand" id="i1" value="2"></td>
+                            <td><input type="radio" name="r-brand" id="i1" value="1"></td>
                             <td><label for="i1">iPhone</label></td>
                         </tr>
                         <tr>
-                            <td><input type="radio" name="r-brand" id="i2" value="1"></td>
+                            <td><input type="radio" name="r-brand" id="i2" value="2"></td>
                             <td><label for="i2">SamSung</label></td>
                         </tr>
                         <tr>

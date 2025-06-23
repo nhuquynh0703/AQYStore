@@ -22,7 +22,7 @@ function searchAction(){
 		$page =1;
 	}
 	$numProduct = count($data_tmp);
-	$productOnPage = 5;
+	$productOnPage = 8;
 	$num = ceil($numProduct/$productOnPage);
 	if(!empty($_GET['page']) && $_GET['page']>$num){
 		$page =$num;

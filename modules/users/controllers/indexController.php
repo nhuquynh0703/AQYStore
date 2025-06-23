@@ -183,7 +183,30 @@ function infoUpdateAction(){
 	load_view('info');
 }
 
+function changePasswordAction() {
+    if (!isset($_SESSION['id_customer'])) {
+        header('location:?modules=users&controllers=index&action=index');
+        exit();
+    }
 
+    if (isset($_POST['btn_change_password'])) {
+        $old = $_POST['old_password'];
+        $new = $_POST['new_password'];
+        $confirm = $_POST['confirm_password'];
 
+        $user = getUserInfo($_SESSION['id_customer']);
+        if (!password_verify($old, $user['password'])) {
+            echo "<script>alert('Mật khẩu hiện tại không đúng');</script>";
+        } elseif ($new != $confirm) {
+            echo "<script>alert('Mật khẩu xác nhận không khớp');</script>";
+        } else {
+            $hashed = password_hash($new, PASSWORD_DEFAULT);
+            updateUserPassword($_SESSION['id_customer'], $hashed);
+            echo "<script>alert('Đổi mật khẩu thành công!');</script>";
+        }
+    }
+
+    load_view('info'); // Hoặc view riêng nếu bạn tách riêng trang đổi mật khẩu
+}
 
  ?>
