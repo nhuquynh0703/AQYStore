@@ -4,7 +4,6 @@ function searchProduct($data){
 	return db_fetch_array("SELECT * FROM `tbl_product` WHERE `name` LIKE '%$data%' ");
 }
 
-
 function getProductFilter($data){
 	$sql_price = null ;
 	$sql_brand = null;
@@ -17,7 +16,6 @@ function getProductFilter($data){
 		$sql_price = " `promotional_price` BETWEEN $price_1 AND $price_2 AND";
 	};
 
-
 	if(!empty($data['r_brand'])){
 		 $brand = $data['r_brand'] ;
 		 $sql_brand = "`id_brand` = '$brand' AND";
@@ -28,7 +26,7 @@ function getProductFilter($data){
 		$sql_category = "`id_category` = '$cate' AND";
 	};
 
-	$sql = "SELECT * FROM `tbl_product` WHERE ".$sql_brand.$sql_category.$sql_price;
+	$sql = "SELECT * FROM `tbl_product` WHERE ".$sql_price.$sql_brand.$sql_category;
 	if(empty($sql_brand) && empty($sql_category) && empty($sql_price)){
 		return null;
 	}

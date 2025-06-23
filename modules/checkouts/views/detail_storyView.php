@@ -40,12 +40,12 @@
                                 </a>
                             </td>
                             <td><?php echo $value['name']; ?> </td>
-                            <td><?php echo $value['price'].' .VNĐ'; ?></td>
+                            <td><?php echo number_format((int)$value['price'], 0, ',', '.').' VNĐ'; ?></td>
                             <td>
                                 <input type="text" name="num-order" value="<?php echo $value['qty'] ;?>"
                                     class="num-order">
                             </td>
-                            <td><?php echo $value['sub_total_price'].' .VNĐ'; ?></td>
+                            <td><?php echo number_format((int)$value['sub_total_price'], 0, ',', '.') .' VNĐ'; ?></td>
                         </tr>
                         <?php }}; ?>
 

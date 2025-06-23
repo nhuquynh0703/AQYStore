@@ -105,9 +105,9 @@
     border-bottom: 1px solid #eee;
 }
 
-#category-product-wp .list-item li:last-child a {
+/* #category-product-wp .list-item li:last-child a {
     border-bottom: none;
-}
+} */
 
 #category-product-wp .list-item>li:hover>a {
     background: #5D6EEB;

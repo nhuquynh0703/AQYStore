@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-<?php get_sidebar('sidebar02'); ?>
+<?php get_sidebar('sidebar04'); ?>
 
     </div>
 </div>

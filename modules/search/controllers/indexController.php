@@ -50,11 +50,11 @@ function filterAction(){
 		$r_brand = $_POST['r-brand'];
 	}
 
-	if(!empty($_POST['r-category'])){
-		$r_category = $_POST['r-category'];
-	}
+	// if(!empty($_POST['r-category'])){
+	// 	$r_category = $_POST['r-category'];
+	// }
 
-	$input = ['r_price' => $r_price, 'r_brand' => $r_brand, 'r_category'=> $r_category];
+	$input = ['r_price' => $r_price, 'r_brand' => $r_brand, 'r_category'=> '13'];
 
 	// phân trang
 	$data = getProductFilter($input);
@@ -87,7 +87,106 @@ function filterAction(){
 	// echo "<pre>";
 }
 
+function filter1Action(){
+	$r_price = null;
+	$r_brand = null;
+	$r_category = null;
 
+	if(!empty($_POST['r-price'])){
+		$r_price = $_POST['r-price'];
+	}
+
+	if(!empty($_POST['r-brand'])){
+		$r_brand = $_POST['r-brand'];
+	}
+
+	// if(!empty($_POST['r-category'])){
+	// 	$r_category = $_POST['r-category'];
+	// }
+
+	$input = ['r_price' => $r_price, 'r_brand' => $r_brand, 'r_category'=> '14'];
+
+	// phân trang
+	$data = getProductFilter($input);
+	// $page;
+	// if(!empty($_GET['page'])){
+	// 	$page = $_GET['page'];
+	// }else{
+	// 	$page =1;
+	// }
+	// $numProduct = count($data_tmp);
+	// $productOnPage = 5;
+	// $num = ceil($numProduct/$productOnPage);
+	// if(!empty($_GET['page']) && $_GET['page']>$num){
+	// 	$page =$num;
+	// }
+	// $start = ($page - 1) * $productOnPage;
+	// $res =[];
+	// for ($i=$start; $i < $start+$productOnPage; $i++) { 
+	// 	if(isset($data_tmp[$i]))
+ //        $res[] = $data_tmp[$i];
+	// };
+
+	// $data = [$res,$num,$page,$key_word,$data_tmp];
+
+
+
+	//echo count($data);
+	load_view('filter1',$data);
+	// print_r($data);
+	// echo "<pre>";
+}
+
+
+function filter2Action(){
+	$r_price = null;
+	$r_brand = null;
+	$r_category = null;
+
+	if(!empty($_POST['r-price'])){
+		$r_price = $_POST['r-price'];
+	}
+
+	if(!empty($_POST['r-brand'])){
+		$r_brand = $_POST['r-brand'];
+	}
+
+	// if(!empty($_POST['r-category'])){
+	// 	$r_category = $_POST['r-category'];
+	// }
+
+	$input = ['r_price' => $r_price, 'r_brand' => $r_brand, 'r_category'=> '12'];
+
+	// phân trang
+	$data = getProductFilter($input);
+	// $page;
+	// if(!empty($_GET['page'])){
+	// 	$page = $_GET['page'];
+	// }else{
+	// 	$page =1;
+	// }
+	// $numProduct = count($data_tmp);
+	// $productOnPage = 5;
+	// $num = ceil($numProduct/$productOnPage);
+	// if(!empty($_GET['page']) && $_GET['page']>$num){
+	// 	$page =$num;
+	// }
+	// $start = ($page - 1) * $productOnPage;
+	// $res =[];
+	// for ($i=$start; $i < $start+$productOnPage; $i++) { 
+	// 	if(isset($data_tmp[$i]))
+ //        $res[] = $data_tmp[$i];
+	// };
+
+	// $data = [$res,$num,$page,$key_word,$data_tmp];
+
+
+
+	//echo count($data);
+	load_view('filter2',$data);
+	// print_r($data);
+	// echo "<pre>";
+}
 
 
 

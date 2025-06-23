@@ -23,36 +23,36 @@
                             </ul>
                         </li> 
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=14" title="">Tablet</a>
+                            <a href="?modules=products&controllers=index&action=show1&id_cat=14" title="">Tablet</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=category_product" title="">iPad</a>
+                                    <a href="?modules=productnews&controllers=index&action=show1&id_cat=14&id_brand=5" title="">iPad</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Samsung</a>
+                                    <a href="?modules=productnews&controllers=index&action=show1&id_cat=14&id_brand=2"title="">Samsung</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Xiaomi</a>
+                                    <a href="?modules=productnews&controllers=index&action=show1&id_cat=14&id_brand=3" title="">Xiaomi</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Huawei</a>
+                                    <a href="?modules=productnews&controllers=index&action=show1&id_cat=14&id_brand=6" title="">Huawei</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="?modules=products&controllers=index&action=show&id_cat=12" title="">Laptop</a>
+                            <a href="?modules=products&controllers=index&action=show2&id_cat=12" title="">Laptop</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="?page=category_product" title="">Mac</a>
+                                    <a href="?modules=productnews&controllers=index&action=show2&id_cat=12&id_brand=7" title="">Mac</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">ASUS</a>
+                                    <a href="?modules=productnews&controllers=index&action=show2&id_cat=12&id_brand=8" title="">ASUS</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Lenovo</a>
+                                    <a href="?modules=productnews&controllers=index&action=show2&id_cat=12&id_brand=9" title="">Lenovo</a>
                                 </li>
                                 <li>
-                                    <a href="?page=category_product" title="">Dell</a>
+                                    <a href="?modules=productnews&controllers=index&action=show2&id_cat=12&id_brand=10" title="">Dell</a>
                                 </li>
                             </ul>
                         </li> 

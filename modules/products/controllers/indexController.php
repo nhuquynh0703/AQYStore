@@ -78,3 +78,109 @@ function showAction(){
     $data = [$name, $res, $num, $id_cat, $page, $total_product, $displaying_count];
     load_view('show', $data);
 }
+
+function show1Action(){
+    $id_cat = $_GET['id_cat'];
+    $name = getNameCatById($id_cat);
+    $data_tmp = getAllByIDCat($id_cat);
+
+    // Xử lý lọc
+    $order = isset($_POST['select']) ? $_POST['select'] : 0;
+
+    switch ($order) {
+        case 1:
+            usort($data_tmp, function($a, $b) {
+                return strcmp($b['name'], $a['name']);
+            });
+            break;
+        case 2:
+            usort($data_tmp, function($a, $b) {
+                return strcmp($a['name'], $b['name']);
+            });
+            break;
+        case 3:
+            usort($data_tmp, function($a, $b) {
+                return $b['promotional_price'] - $a['promotional_price'];
+            });
+            break;
+        case 4:
+            usort($data_tmp, function($a, $b) {
+                return $a['promotional_price'] - $b['promotional_price'];
+            });
+            break;
+    }
+
+    $page = !empty($_GET['page']) ? $_GET['page'] : 1;
+    $numProduct = count($data_tmp);
+    $productOnPage = 12;
+    $num = ceil($numProduct / $productOnPage);
+    if (!empty($_GET['page']) && $_GET['page'] > $num) {
+        $page = $num;
+    }
+
+    $start = ($page - 1) * $productOnPage;
+    $res = [];
+    for ($i = $start; $i < $start + $productOnPage; $i++) {
+        if (isset($data_tmp[$i]))
+            $res[] = $data_tmp[$i];
+    }
+
+	$total_product = $numProduct;
+    $displaying_count = count($res);
+
+    $data = [$name, $res, $num, $id_cat, $page, $total_product, $displaying_count];
+    load_view('show1', $data);
+}
+
+function show2Action(){
+    $id_cat = $_GET['id_cat'];
+    $name = getNameCatById($id_cat);
+    $data_tmp = getAllByIDCat($id_cat);
+
+    // Xử lý lọc
+    $order = isset($_POST['select']) ? $_POST['select'] : 0;
+
+    switch ($order) {
+        case 1:
+            usort($data_tmp, function($a, $b) {
+                return strcmp($b['name'], $a['name']);
+            });
+            break;
+        case 2:
+            usort($data_tmp, function($a, $b) {
+                return strcmp($a['name'], $b['name']);
+            });
+            break;
+        case 3:
+            usort($data_tmp, function($a, $b) {
+                return $b['promotional_price'] - $a['promotional_price'];
+            });
+            break;
+        case 4:
+            usort($data_tmp, function($a, $b) {
+                return $a['promotional_price'] - $b['promotional_price'];
+            });
+            break;
+    }
+
+    $page = !empty($_GET['page']) ? $_GET['page'] : 1;
+    $numProduct = count($data_tmp);
+    $productOnPage = 12;
+    $num = ceil($numProduct / $productOnPage);
+    if (!empty($_GET['page']) && $_GET['page'] > $num) {
+        $page = $num;
+    }
+
+    $start = ($page - 1) * $productOnPage;
+    $res = [];
+    for ($i = $start; $i < $start + $productOnPage; $i++) {
+        if (isset($data_tmp[$i]))
+            $res[] = $data_tmp[$i];
+    }
+
+	$total_product = $numProduct;
+    $displaying_count = count($res);
+
+    $data = [$name, $res, $num, $id_cat, $page, $total_product, $displaying_count];
+    load_view('show2', $data);
+}
