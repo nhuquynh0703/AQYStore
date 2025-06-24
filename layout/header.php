@@ -47,7 +47,7 @@
                             </li>
                             <li>
                                 <a href="?modules=contacts&action=index" title="">Liên hệ</a>
-                                <a href="?modules=contacts&action=index" title="">Liên hệ</a>
+                                <!-- <a href="?modules=contacts&action=index" title="">Liên hệ</a> -->
                             </li>
                             <li>
                                 <?php if (!empty($_SESSION['fullname'])): ?>
