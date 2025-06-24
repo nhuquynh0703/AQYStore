@@ -1,14 +1,12 @@
-<?php 
-
+<?php
 
 function insertUser($username, $password, $fullname, $mail, $phone, $address, $create_date){
 
-	$password = md5($password);
-
+	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 	$data = [
 
 		'username' => $username,
-		'password' => $password,
+		'password' => $hashed_password,
 		'fullname' => $fullname,
 		'mail' => $mail,
 		'phone' => $phone,
@@ -40,27 +38,41 @@ function checkUser($username, $mail, $phone){
 
 
 
-function checkLogin($username, $password){
+function checkLogin($username, $password) {
+    global $conn; // dùng biến kết nối CSDL đã có
 
-	$password = md5($password);
-	$check =false;
-	if(db_num_rows("SELECT * FROM `tbl_customer` WHERE `username` = '$username' AND `password` = '$password'") == 1){
-		$check = true;
-	}
+    // Chuẩn bị câu lệnh SQL an toàn
+    $stmt = $conn->prepare("SELECT * FROM tbl_customer WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
 
-	return $check;
+    // Lấy kết quả
+    $result = $stmt->get_result();
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+
+        // So sánh mật khẩu với bản mã hóa trong DB
+        if (password_verify($password, $user['password'])) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 
 
 
 
-function getUser($username, $password){
+function getUser($username, $password) {
+    $user = db_fetch_row("SELECT * FROM `tbl_customer` WHERE `username` = '$username'");
 
-	$password = md5($password);
-	return db_fetch_row("SELECT * FROM `tbl_customer` WHERE `username` = '$username' AND `password` = '$password'");
-
+    if ($user && password_verify($password, $user['password'])) {
+        return $user;
+    }
+    return false;
 }
+
 
 
 
@@ -73,4 +85,18 @@ function logout(){
 }
 
 
- ?>
+function getUserInfo($id){
+    return db_fetch_row("SELECT * FROM `tbl_customer` WHERE `id` = {$id}");
+}
+
+
+function updateUserInfo($id, $fullname, $mail, $phone){
+	$data = [
+		'fullname' => $fullname,
+		'mail' => $mail,
+		'phone' => $phone
+	];
+
+	return db_update("tbl_customer", $data, "`id` = {$id}");
+
+}
