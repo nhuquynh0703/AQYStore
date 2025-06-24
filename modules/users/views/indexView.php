@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+
 <?php 	if(!empty($_SESSION['mess'])) 
 			{echo " <script type='text/javascript'> alert('Bạn cần đăng nhập trước khi mua hàng!!!');</script>";
 			unset($_SESSION['mess']);}
@@ -45,13 +47,7 @@
                     </div>
                 </div>
                 <input type="submit" name="btn_submit" id="btn-submit" value="Đăng nhập"
-                    style="height: 40px;
-                                                                                                border-radius: 60px;
-                                                                                                width: 150px;
-                                                                                                color: green;
-                                                                                                border-color: white;
-                                                                                                color: white;
-                                                                                                background-color: #48ad48;">
+                    style="height: 40px; border-radius: 60px; width: 150px; color: green; border-color: white; color: white; background-color: #48ad48;">
             </div>
 
         </form>
@@ -78,7 +74,7 @@
                     <div class="form-row clearfix">
                         <div class="form-col fl-left">
                             <label for="address">Email</label>
-                            <input type="text" name="mail" id="address">
+                            <input type="email" name="mail" id="address">
                         </div>
                         <div class="form-col fl-right">
                             <label for="phone">Số điện thoại</label>
@@ -96,14 +92,7 @@
                         </div>
                     </div>
                     <input type="submit" name="btn_submit_crate" id="btn-submit" value="Đăng ký"
-                        style="height: 40px;
-                                                                                                border-radius: 60px;
-                                                                                                width: 150px;
-                                                                                                color: green;
-                                                                                                border-color: white;
-                                                                                                color: white;
-                                                                                                background-color: #48ad48;">
-
+                        style="height: 40px; border-radius: 60px; width: 150px; color: green; border-color: white; color: white; background-color: #48ad48;">
                 </form>
 
             </div>

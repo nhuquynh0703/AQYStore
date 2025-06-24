@@ -18,12 +18,18 @@
 
     <!-- Bootstrap 5 JS (để nút close hoạt động) -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap 5 JS (để nút close hoạt động) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="public/js/elevatezoom-master/jquery.elevatezoom.js" type="text/javascript"></script>
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
+
 
 </head>
 
@@ -32,25 +38,23 @@
         <div id="header-wp">
             <div id="head-top" class="clearfix" style=" !important;">
                 <div class="wp-inner">
-                    <a href="" title="" id="payment-link" class="fl-left">    Always Quality for You</a>
+                    <a href="" title="" id="payment-link" class="fl-left">Always Quality for You</a>
                     <div id="main-menu-wp" class="fl-right">
                         <ul id="main-menu" class="clearfix">
 
                             <li>
                                 <a href="?modules=blogs&action=list" title="">Blog</a>
                             </li>
-                            <!-- <li>
-                                        <a href="?modules=contacts&action=introduce" title="">Giới thiệu</a>
-                                    </li> -->
                             <li>
                                 <a href="?modules=contacts&action=index" title="">Liên hệ</a>
+                                <a href="?modules=contacts&action=index" title="">Liên hệ</a>
                             </li>
-                            <!-- <li>
-                                        <a href="?modules=checkouts&controllers=index&action=story" title="">Lịch sử mua hàng</a>
-                                    </li> -->
                             <li>
-                                <a href="?modules=users&action=index"
-                                    title=""><?php if(!empty($_SESSION['fullname'])) echo $_SESSION['fullname'];else echo "Đăng nhập"; ?></a>
+                                <?php if (!empty($_SESSION['fullname'])): ?>
+                                    <a href="?modules=users&controllers=index&action=info"><?php echo $_SESSION['fullname']; ?></a>
+                                <?php else: ?>
+                                    <a href="?modules=users&action=index">Đăng nhập</a>
+                                <?php endif; ?>
                             </li>
                             <?php if(!empty($_SESSION['fullname'])) { ?>
                             <li>
@@ -58,23 +62,16 @@
                             </li>
                             <?php }; ?>
 
-
-                            <!--     <li>
-                                        <a href="?modules=users&controllers=index&action=index" title="">Đăng kí</a>
-                                    </li>
-                                    <li>
-                                        <a href="?modules=users&controllers=index&action=index" title="">Đăng nhập</a>
-                                    </li> -->
-                            <a style="display: inline;" href=""></a>
                         </ul>
                     </div>
                 </div>
             </div>
             <div id="head-body" class="clearfix head-body"
                 style="background: #5D6EEB !important;">
-                <div class="wp-inner">
-                    <a href="?modules=home" title="" id="logo" class="fl-left"><img
-                            src="public/images/logoaha.png" /></a>
+                <div class="wp-inner" style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="?modules=home" title="" id="logo" class="fl-left" style="height: 100px; width: 150px; padding: 0;">
+                        <img style="height: 100px; width: 150px;" src="public/images/AQY_Store.png" />
+                    </a>
 
                     <div id="search-wp" class="fl-left">
                         <form method="post" action="?modules=search&controllers=index&action=search">
@@ -103,6 +100,8 @@
                                 <!-- giỏ hàng -->
                                 <p class="desc">Có
                                     <span><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder']; else echo '0'; ?>
+                                        sản phẩm</span> trong giỏ hàng
+                                </p>
                                         sản phẩm</span> trong giỏ hàng
                                 </p>
                                 <ul class="list-cart">
