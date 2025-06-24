@@ -48,6 +48,9 @@
     font-family: 'Roboto Medium';
     color: #fff;
     padding: 13px 0px;
+    height: 85px; 
+    width: 180px;
+
 }
 
 #head-body #search-wp {

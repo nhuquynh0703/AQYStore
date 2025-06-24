@@ -3,6 +3,7 @@
 function insertUser($username, $password, $fullname, $mail, $phone, $address, $create_date){
 
 	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 	$data = [
 
 		'username' => $username,
@@ -99,4 +100,9 @@ function updateUserInfo($id, $fullname, $mail, $phone){
 
 	return db_update("tbl_customer", $data, "`id` = {$id}");
 
+}
+
+
+function updateUserPassword($id, $new_password) {
+    return db_update('tbl_customer', ['password' => $new_password], "`id` = '{$id}'");
 }
