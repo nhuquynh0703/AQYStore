@@ -105,9 +105,9 @@
                             <?php if(isset($_SESSION['cart']['buy']) ){?>
                             <?php foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>
                             <tr class="cart-item">
-                                <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity" style="color: red"> x 
-                                        <?php echo $value['qty']; ?></strong></td>
-                                <td class="product-total"><?php echo number_format($value['sub_total'], 0, ',', '.') . " VNĐ"; ?></td>
+                                <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity">          x     
+                                        <?php echo $value['qty']; ?></strong></td> 
+                                <td class="product-total"><?php echo number_format((int)$value['sub_total'], 0, ',', '.') ." VND"?></td>
                             </tr>
                             <?php }}; ?>
                         </tbody>

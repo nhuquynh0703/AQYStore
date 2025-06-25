@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<!-- <?php get_header(); ?>
 
 <div id="main-content-wp" class="clearfix category-product-page">
     <div class="wp-inner">
@@ -339,4 +339,4 @@
     </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer(); ?> -->

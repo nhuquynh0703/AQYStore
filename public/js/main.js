@@ -158,3 +158,21 @@ function tab() {
     $('#tab-menu li:first-child').addClass('show');
     $('.tabItem:first-child').show();
 }
+
+//cart
+// $(document).ready(function(){
+//     $('.add-to-cart').click(function(e){
+//         e.preventDefault();
+//         let id = $(this).data('id');
+
+//         $.ajax({
+//             url: '?modules=carts&controllers=index&action=add&id=' + id,
+//             type: 'GET',
+//             success: function(response){
+//                 let data = JSON.parse(response);
+//                 alert(data.message);
+//                 $('#cart-count').text(data.cart_total); // Cập nhật số giỏ hàng nếu có
+//             }
+//         });
+//     });
+// });

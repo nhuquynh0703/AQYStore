@@ -13,6 +13,19 @@ function addAction(){
 	$id = $_GET['id'];
 	addCartByID($id);
 	header('location: ?modules=carts&controllers=index&action=show');
+	if (isset($_SERVER['HTTP_REFERER'])) {
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    } else {
+        // Nếu không có referer thì chuyển về trang chủ
+        header('Location: ?modules=home');
+    }
+
+	// echo json_encode([
+    //     'status' => 'success',
+    //     'message' => 'Đã thêm vào giỏ hàng',
+    //     // 'cart_total' => $_SESSION['cart']['info']['num_order']
+    // ]);
+    // exit();
 }
 
 
