@@ -37,9 +37,12 @@
     <div id="site">
         <div id="header-wp">
             <div id="head-top" class="clearfix" style=" !important;">
-                <div class="wp-inner">
-                    <a href="" title="" id="payment-link" class="fl-left">Always Quality for You</a>
-                    <div id="main-menu-wp" class="fl-right">
+                <div class="wp-inner" style="display: flex; justify-content: space-between; align-items: center;">
+                    <marquee id="payment-link" class="fl-left" style="display: inline-block; overflow: hidden; text-align: initial; white-space: nowrap;">
+                         Always Quality for You | Chuyên cung cấp các sản phẩm công nghệ chính hãng, chất lượng cao với giá cả hợp lý.
+                    </marquee>
+                    
+                    <div id="main-menu-wp" class="fl-right" style="width: 50%;">
                         <ul id="main-menu" class="clearfix">
 
                             <li>
@@ -103,9 +106,9 @@
                                 <a href="?modules=carts&action=show" title="Giỏ hàng">
                                     <i class="fa fa-shopping-cart" aria-hidden="true" style=" color: white;"></i>
                                 
-                                <span id="num" style=" color: white;">
-                                    <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];else echo '0'; ?>
-                                </span>
+                                    <span id="num" style=" color: white;">
+                                       <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];else echo '0'; ?>
+                                    </span>
                                 </a>
                             </div>
                             <div id="dropdown">
@@ -125,7 +128,7 @@
                                         </a>
                                         <div class="info fl-right">
                                             <a href="" title="" class="product-name"><?php echo $value['name']; ?></a>
-                                            <p class="price"><?php echo number_format((int)$value['price'], 0, ',', '.').' VNĐ'; ?></p>
+                                            <p class="price"><?php echo $value['price'].' .VNĐ'; ?></p>
                                             <p class="qty">Số lượng: <span><?php echo $value['qty'] ;?></span></p>
                                         </div>
                                     </li>
