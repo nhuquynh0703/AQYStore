@@ -17,6 +17,7 @@ function addAction() {
 
 function detailAction() {
 
+    
 	$id = $_GET['id'];
 	$id_cat = getIDCatByIDProduct($id);
 	$name = getNameCatById($id_cat);
