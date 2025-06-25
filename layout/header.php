@@ -84,9 +84,13 @@
                         </a>
                         <div id="cart-wp" class="fl-right">
                             <div id="btn-cart">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span
-                                    id="num"><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];else echo '0'; ?></span>
+                                <a href="?modules=carts&action=show" title="Giỏ hàng">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true" style=" color: white;"></i>
+                                
+                                <span id="num" style=" color: white;">
+                                    <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];else echo '0'; ?>
+                                </span>
+                                </a>
                             </div>
                             <div id="dropdown">
                                 <!-- giỏ hàng -->

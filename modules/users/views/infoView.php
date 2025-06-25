@@ -59,7 +59,7 @@
                             <label for="address">Địa chỉ</label>
                             <input style="height: 38px; width: 250px; border: 1px solid #cccccc;" type="text"
                                 name="address" id="address"
-                                value="<?php echo isset($_SESSION['address']) ? $_SESSION['address'] : ''; ?>" readonly>
+                                value="<?php echo isset($_SESSION['address']) ? $_SESSION['address'] : ''; ?>">
                         </div>
                     </div>
                 </div>

@@ -105,9 +105,9 @@
                             <?php if(isset($_SESSION['cart']['buy']) ){?>
                             <?php foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>
                             <tr class="cart-item">
-                                <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity">x
+                                <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity" style="color: red"> x 
                                         <?php echo $value['qty']; ?></strong></td>
-                                <td class="product-total"><?php echo $value['sub_total']; ?></td>
+                                <td class="product-total"><?php echo number_format($value['sub_total'], 0, ',', '.') . " VNĐ"; ?></td>
                             </tr>
                             <?php }}; ?>
                         </tbody>
@@ -118,7 +118,7 @@
                                     <strong class="total-price">
                                         <?php if(isset($_SESSION['cart']['buy'])) 
                                             {$tong= $_SESSION['cart']['info']['total']; 
-                                            echo $tong." VND"; }
+                                            echo number_format($tong, 0, ',', '.')." VND"; }
                                             else {
                                                 $tong =0;
                                                 echo "VND";
@@ -148,8 +148,9 @@
 
                     <div class="place-order-wp clearfix">
                         <input
-                            style="width: 25% !important;margin-left: 224px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;"
+                            style="width: 25% !important;margin-left: 270px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;"
                             type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
+                            
                     </div>
                 </div>
             </div>
@@ -189,9 +190,8 @@
     color: white !important;
     height: auto !important;
     position: absolute;
-    right: 14px;
-    bottom: 60px;
-    bottom: 262px;
+    left: 330px;
+    bottom: 40px;
     transition: color 0.3s ease !important;
     z-index: 99;
 
