@@ -72,10 +72,18 @@
                     <a href="?modules=home" title="" id="logo" class="fl-left" style="height: 100px; width: 150px; padding: 0;">
                         <img style="height: 100px; width: 150px;" src="public/images/AQY_Store.png" />
                     </a>
+                     <?php
+                    $kw = '';
+                    if (!empty($_POST['key_word'])) {
+                        $kw = $_POST['key_word'];
+                    } else if (!empty($_GET['key_word'])) {
+                        $kw = $_GET['key_word'];
+                    }
+                    ?>
 
                     <div id="search-wp" class="fl-left">
                         <form method="post" action="?modules=search&controllers=index&action=search">
-                            <input type="text" name="key_word" id="s" placeholder="Tìm kiếm sản phẩm...">
+                            <input type="text" name="key_word" value="<?= htmlspecialchars($kw) ?>" id="s" placeholder="Tìm kiếm sản phẩm...">
                             <input type="submit" id="sm-s" name="btn_submit" value="Tìm kiếm">
                         </form>
                     </div>

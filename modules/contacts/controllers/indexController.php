@@ -47,8 +47,9 @@ function contactAction(){
             insertContact($fullname, $mail, $phone, $address, $note, $create_date);
         }
     }
+            echo "<script>alert('Cảm ơn bạn đã đóng góp ý kiến!');</script>";
     
-    header('location: ?modules=contacts&action=index');
+    load_view('index');
 }
 
  ?>

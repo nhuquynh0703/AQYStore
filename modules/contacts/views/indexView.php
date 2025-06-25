@@ -1,5 +1,3 @@
-
-
 <?php get_header(); ?>
 <div id="main-content-wp" class="checkout-page">
     <div class="section" id="breadcrumb-wp">
@@ -111,7 +109,7 @@
                             </td>
                         </tr>
                         <tr class="cart-item">
-                            <td class="product-name">Fax: 123 456 789<strong class="product-quantity">x 2</strong></td>
+<td class="product-name">Fax: 123 456 789<strong class="product-quantity">x 2</strong></td>
                         </tr>
                         <tr class="order-total">
                             <td><strong class="total-price">Email: 21111065662@gmail.com</strong></td>

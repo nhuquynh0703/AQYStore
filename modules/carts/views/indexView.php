@@ -48,7 +48,7 @@
                             <td>
                                 <input min="1" style="width: 60px;" type="number" name="qty[<?php echo $value['id']; ?>]" value="<?php echo  $value['qty']; ?>" class="num-order" >
                             </td>
-                            <td><?php echo $value['sub_total']." .VNĐ"; ?></td>
+                            <td><?php echo number_format((int)$value['sub_total'], 0, ',', '.')." VNĐ"; ?></td>
                             <td>
                                 <p ><a href="?modules=carts&controllers=index&action=delete&id=<?php echo $value['id']; ?>" title="" class="del-product"><i class="fa fa-trash-o"></i></a></p>
                             </td>
@@ -59,7 +59,7 @@
                         <tr>
                             <td colspan="7">
                                 <div class="clearfix">
-                                    <p id="total-price" class="fl-right">Tổng giá: <span><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['total']." VNĐ"; else echo "0 VNĐ"; ?></span></p>
+                                    <p id="total-price" class="fl-right">Tổng giá: <span><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo number_format((int)$_SESSION['cart']['info']['total'], 0, ',', '.')." VNĐ"; else echo "0 VNĐ"; ?></span></p>
                                 </div>
                             </td>
                         </tr>

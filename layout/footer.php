@@ -50,8 +50,9 @@
                 <p class="desc">Đăng ký với chung tôi để nhận được thông tin ưu đãi sớm nhất</p>
                 <div id="form-reg">
                     <form method="POST" action="">
-                        <input type="email" name="email" id="email" placeholder="Nhập email của bạn" required>
-                        <button type="submit" id="sm-reg">Đăng ký ngay</button>
+                        
+                        <input type="email" name="email" id="email" placeholder="Nhập email của bạn">
+                        <button type="submit" id="sm-reg" class= "btn-subscribe">Đăng ký ngay</button>
                     </form>
                 </div>
             </div>
@@ -78,6 +79,35 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
+
+<script>
+document.querySelector('.btn-subscribe').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const email = document.querySelector('#email').value.trim();
+
+
+    // Biểu thức kiểm tra email hợp lệ
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email == '') {
+        alert("Vui lòng nhập email trước khi đăng ký!");
+    } else if (!emailRegex.test(email)) {
+        alert("Email bạn nhập không hợp lệ. Vui lòng kiểm tra lại!");
+    } else {
+        document.getElementById('email').value = '';
+        alert("Cảm ơn bạn đã đăng ký nhận bản tin!");
+        // Có thể xử lý gửi dữ liệu tại đây
+    }
+});
+</script>
+
+
+
+
+
+
+
 </body>
 
 </html>

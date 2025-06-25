@@ -38,7 +38,7 @@
                     </div>
                     <div class="fb-comments" id="fb-comment" data-href="" data-numposts="5"></div>
                 </div>
-                <p>Chủ sở hữu của mk : <?php echo $data['user']; ?></p>
+                <p>Chủ sở hữu của : <?php echo $data['user']; ?></p>
             </div>
         </div>
 <?php get_sidebar(); ?>
