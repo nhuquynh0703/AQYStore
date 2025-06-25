@@ -35,6 +35,3 @@ function insertContact($fullname, $mail, $phone, $address, $note, $create_date){
 
 
 ?>
-
-
-

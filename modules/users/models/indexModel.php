@@ -3,6 +3,7 @@
 function insertUser($username, $password, $fullname, $mail, $phone, $address, $create_date){
 
 	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+	$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 	$data = [
 
 		'username' => $username,

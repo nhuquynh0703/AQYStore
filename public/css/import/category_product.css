@@ -57,7 +57,7 @@
 .filter-wp form button {
     position: relative;
     left: -4px;
-    background: #bebebe;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     border: none;
     outline: none;
     padding: 3px 15px;
@@ -66,7 +66,7 @@
 }
 
 .filter-wp form button:hover {
-    background: #a2a2a2;
+        background: linear-gradient(135deg, #667eea 0%, #9170b3 100%) !important;
 }
 
 #filter-product-wp {

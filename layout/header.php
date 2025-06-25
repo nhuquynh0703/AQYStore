@@ -18,12 +18,22 @@
 
     <!-- Bootstrap 5 JS (để nút close hoạt động) -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap 5 JS (để nút close hoạt động) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <script src="public/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="public/js/elevatezoom-master/jquery.elevatezoom.js" type="text/javascript"></script>
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 77723a01392d885514c88dbe4f4f8523ca9189ba
 </head>
 
 <body>
@@ -43,6 +53,7 @@
                             </li>
                             <li>
                                 <a href="?modules=contacts&action=index" title="">Liên hệ</a>
+                                <!-- <a href="?modules=contacts&action=index" title="">Liên hệ</a> -->
                             </li>
                             <li>
                                 <?php if (!empty($_SESSION['fullname'])): ?>
@@ -67,10 +78,21 @@
                     <a href="?modules=home" title="" id="logo" class="fl-left" style="height: 100px; width: 150px; padding: 0;">
                         <img style="height: 100px; width: 150px;" src="public/images/AQY_Store.png" />
                     </a>
+<<<<<<< HEAD
+                     <?php
+                    $kw = '';
+                    if (!empty($_POST['key_word'])) {
+                        $kw = $_POST['key_word'];
+                    } else if (!empty($_GET['key_word'])) {
+                        $kw = $_GET['key_word'];
+                    }
+                    ?>
+=======
+>>>>>>> 77723a01392d885514c88dbe4f4f8523ca9189ba
 
                     <div id="search-wp" class="fl-left">
                         <form method="post" action="?modules=search&controllers=index&action=search">
-                            <input type="text" name="key_word" id="s" placeholder="Tìm kiếm sản phẩm...">
+                            <input type="text" name="key_word" value="<?= htmlspecialchars($kw) ?>" id="s" placeholder="Tìm kiếm sản phẩm...">
                             <input type="submit" id="sm-s" name="btn_submit" value="Tìm kiếm">
                         </form>
                     </div>
@@ -99,6 +121,8 @@
                                 <!-- giỏ hàng -->
                                 <p class="desc">Có
                                     <span><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder']; else echo '0'; ?>
+                                        sản phẩm</span> trong giỏ hàng
+                                </p>
                                         sản phẩm</span> trong giỏ hàng
                                 </p>
                                 <ul class="list-cart">

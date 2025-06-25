@@ -18,6 +18,7 @@ function logoutAction(){
 	logout();
 	header('location:?modules=home');
 	exit();
+	exit();
 }
 
 function loginAction(){
@@ -48,7 +49,9 @@ function loginAction(){
 				$_SESSION['fullname'] = $dataUser['fullname'];
 				header('location:?modules=home');
 				exit();
+				exit();
 			}else{
+				echo " <script type='text/javascript'> alert('Thông tin tài khoản không đúng!!!');</script>";
 				echo " <script type='text/javascript'> alert('Thông tin tài khoản không đúng!!!');</script>";
 			}
 		}else{
