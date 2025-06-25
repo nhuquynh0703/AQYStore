@@ -148,8 +148,9 @@
 
                     <div class="place-order-wp clearfix">
                         <input
-                            style="width: 25% !important;margin-left: 224px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;"
+                            style="width: 25% !important;margin-left: 270px;background: linear-gradient(135deg, #5ddda1 0%, #4ba271 100%) !important;"
                             type="submit" id="order-now" value="Đặt hàng" name="btn_submit">
+                            
                     </div>
                 </div>
             </div>
@@ -189,9 +190,8 @@
     color: white !important;
     height: auto !important;
     position: absolute;
-    right: 14px;
-    bottom: 60px;
-    bottom: 262px;
+    left: 330px;
+    bottom: 40px;
     transition: color 0.3s ease !important;
     z-index: 99;
 

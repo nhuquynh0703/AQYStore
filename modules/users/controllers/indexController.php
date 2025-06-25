@@ -163,23 +163,30 @@ function infoUpdateAction(){
 		}else{
 			$err['phone'] = "phone không được để rỗng";
 		}
-
+		if (!empty($_POST['address'])) {
+			$address = $_POST['address'];
+		}else{
+			$err['address'] = "address không được để rỗng";
+		}
 		if(empty($err)){
 			$id = $_SESSION['id_customer']; // Lấy id user từ session
-			updateUserInfo($id, $fullname, $mail, $phone);
-			echo " <script type='text/javascript'> alert('Cập nhật thông tin thành công!!!');</script>";
+			updateUserInfo($id, $fullname, $mail, $phone, $address);
+
 			 $_SESSION['fullname'] = $fullname;
             $_SESSION['mail'] = $mail;
             $_SESSION['phone'] = $phone;
-
-            // Chuyển hướng
-            header('Location: ?modules=users&controllers=index&action=info');
-			exit();
+			$_SESSION['address'] = $address;
+			// Hiển thị thông báo thành công
+			echo " <script type='text/javascript'> alert('Cập nhật thông tin thành công!!!');</script>";
+            // // Chuyển hướng
+            // header('Location: ?modules=users&controllers=index&action=info');
+			// exit();
 		}else{
 
 			echo " <script type='text/javascript'> alert('Bạn phải điền đầy đủ thông tin!!!');</script>";
 			
 		}
+
 		
 		
 	}

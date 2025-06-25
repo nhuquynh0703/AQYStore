@@ -91,11 +91,12 @@ function getUserInfo($id){
 }
 
 
-function updateUserInfo($id, $fullname, $mail, $phone){
+function updateUserInfo($id, $fullname, $mail, $phone, $address){
 	$data = [
 		'fullname' => $fullname,
 		'mail' => $mail,
-		'phone' => $phone
+		'phone' => $phone,
+		'address' => $address 
 	];
 
 	return db_update("tbl_customer", $data, "`id` = {$id}");

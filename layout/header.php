@@ -29,8 +29,11 @@
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 77723a01392d885514c88dbe4f4f8523ca9189ba
 </head>
 
 <body>
@@ -72,6 +75,7 @@
                     <a href="?modules=home" title="" id="logo" class="fl-left" style="height: 100px; width: 150px; padding: 0;">
                         <img style="height: 100px; width: 150px;" src="public/images/AQY_Store.png" />
                     </a>
+<<<<<<< HEAD
                      <?php
                     $kw = '';
                     if (!empty($_POST['key_word'])) {
@@ -80,6 +84,8 @@
                         $kw = $_GET['key_word'];
                     }
                     ?>
+=======
+>>>>>>> 77723a01392d885514c88dbe4f4f8523ca9189ba
 
                     <div id="search-wp" class="fl-left">
                         <form method="post" action="?modules=search&controllers=index&action=search">
@@ -100,9 +106,13 @@
                         </a>
                         <div id="cart-wp" class="fl-right">
                             <div id="btn-cart">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span
-                                    id="num"><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];else echo '0'; ?></span>
+                                <a href="?modules=carts&action=show" title="Giỏ hàng">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true" style=" color: white;"></i>
+                                
+                                <span id="num" style=" color: white;">
+                                    <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder'];else echo '0'; ?>
+                                </span>
+                                </a>
                             </div>
                             <div id="dropdown">
                                 <!-- giỏ hàng -->

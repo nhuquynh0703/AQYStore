@@ -19,10 +19,10 @@ function addCartByID($id){
 		'id' => $item['id'],
 		'code' => $item['code'],
 		'name' => $item['name'],
-		'price' => $item['price'],
+		'price' => $item['promotional_price'],
 		'image' => $item['image'],
 		'qty' => $qty,
-		'sub_total' => $qty * $item['price']
+		'sub_total' => $qty * $item['promotional_price']
 
 		];
 
@@ -132,7 +132,7 @@ function getCartByCustomer($id_customer){
 					'sub_total' => $value['sub_total_price'],
 					'code' => $productes['code'],
 					'name' => $productes['name'],
-					'price' => $productes['price'],
+					'price' => $productes['promotional_price'],
 					'image' => $productes['image']
 					
 					];
