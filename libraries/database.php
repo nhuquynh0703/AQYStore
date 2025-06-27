@@ -109,7 +109,6 @@ function escape_string($str) {
 
 function db_sql_error($message, $query_string = "") {
     global $conn;
-
     $sqlerror = "<table width='100%' border='1' cellpadding='0' cellspacing='0'>";
     $sqlerror.="<tr><th colspan='2'>{$message}</th></tr>";
     $sqlerror.=($query_string != "") ? "<tr><td nowrap> Query SQL</td><td nowrap>: " . $query_string . "</td></tr>\n" : "";

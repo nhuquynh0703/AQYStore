@@ -128,7 +128,7 @@
                                         </a>
                                         <div class="info fl-right">
                                             <a href="" title="" class="product-name"><?php echo $value['name']; ?></a>
-                                            <p class="price"><?php echo $value['price'].' .VNĐ'; ?></p>
+                                            <p class="price"><?php echo number_format((int)$value['price'], 0, ',', '.').' .VNĐ'; ?></p>
                                             <p class="qty">Số lượng: <span><?php echo $value['qty'] ;?></span></p>
                                         </div>
                                     </li>

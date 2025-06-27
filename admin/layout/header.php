@@ -44,7 +44,7 @@
             <div id="container">
                 <div id="header-wp" style="max-height: 55px;">
                     <div class="wp-inner clearfix">
-                        <a href="?modules=home" title="" id="logo" class="fl-left">LOCAL STORE</a>
+                        <a href="?modules=home" title="" id="logo" class="fl-left">AQY STORE</a>
                         <ul id="main-menu" class="fl-left">
                             <li>
                                 <a href="?page=list_post" title="">Trang</a>
@@ -103,7 +103,7 @@
                         <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
                             <button class="dropdown-toggle clearfix" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <div id="thumb-circle" class="fl-left" style="border-radius: 100px; background-color: white;">
-                                    <img style="max-width: 46px; max-height: 46px;border-radius: 46px;" src="public/images/quanh.jpg">
+                                    <img style="max-width: 46px; max-height: 46px;border-radius: 46px;" src="public/images/home-icon.png">
                                 </div>
                                 <h3 id="account" class="fl-right"><?php echo $_SESSION['fullname'] ;?></h3>
                             </button>

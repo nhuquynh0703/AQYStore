@@ -14,7 +14,8 @@
 }
 
 #detail-product-wp .section-detail,
-#post-product-wp .section-detail {
+#post-product-wp .section-detail,
+#comment-product .section-detail {
     background: #fff;
     padding: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -165,7 +166,7 @@
     font-size: 16px;
     background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 12px;
     text-transform: uppercase;
 }
 
@@ -175,7 +176,8 @@
 }
 
 #post-product-wp .section-title,
-#same-category-wp .section-title {
+#same-category-wp .section-title,
+#comment-product .section-title {
     font-size: 20px;
     margin: 35px 0px 20px 0px;
     text-transform: uppercase;
@@ -185,4 +187,23 @@
     padding-bottom: 15px;
     color: #666;
     text-align: justify;
+}
+
+#btn_comment{
+    display: inline-block;
+    padding: 9px 14px;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-radius: 12px;
+    font-family: 'Roboto Regular';
+    font-weight: normal;
+    border: none;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    margin-top: 10px;
+
+}
+
+#btn_comment:hover{
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3) !important;
 }

@@ -23,8 +23,10 @@ function detailAction() {
 	$name = getNameCatById($id_cat);
 	$same_cat = getProductById_cat($id_cat);
 	$res = getProductById($id);
-	$data = [$name, $res, $same_cat];
+    $comments = getCommentsByProductId($id);
+	$data = [$name, $res, $same_cat,$comments];
 	load_view('detail',$data);
+
 }
 
 function showAction(){
@@ -185,3 +187,42 @@ function show2Action(){
     $data = [$name, $res, $num, $id_cat, $page, $total_product, $displaying_count];
     load_view('show2', $data);
 }
+
+function commentAction() {
+    $id = $_GET['id']; // id sản phẩm
+
+
+    // Xử lý gửi bình luận
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn_comment'])) {
+        if (!empty($_SESSION['id_customer'])) {
+            $content = trim($_POST['comment']);
+            if (!empty($content)) {
+                insertComment($id, $_SESSION['id_customer'], $content);
+                // header("Location: ?modules=products&controllers=index&action=detail&id=$id");
+            } else {
+                echo "<script>alert('Bình luận không được để trống!'); window.location.href='?modules=products&controllers=index&action=detail&id=$id';</script>";
+                exit;
+                
+            }
+        } else {
+            $error = "Bạn cần đăng nhập để bình luận!";
+        }
+    }
+
+    // Dù comment thành công hay lỗi, cũng cần load lại dữ liệu để hiển thị
+    
+    $id_cat = getIDCatByIDProduct($id);
+	$name = getNameCatById($id_cat);
+	$same_cat = getProductById_cat($id_cat);
+	$res = getProductById($id);
+    $id = $_GET['id'];
+
+    $comments = getCommentsByProductId($id);
+	$data = [$name, $res, $same_cat,$comments];
+
+    // Gửi về view
+    
+
+    load_view('detail', $data);
+}
+ ?>
