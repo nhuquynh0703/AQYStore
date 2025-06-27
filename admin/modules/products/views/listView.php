@@ -22,6 +22,8 @@
                             <input type="text" name="s" id="s">
                             <input type="submit" name="sm_s" value="Tìm kiếm">
                         </form>
+
+
                     </div>
                     <div class="actions">
                         <form method="GET" action="" class="form-actions">

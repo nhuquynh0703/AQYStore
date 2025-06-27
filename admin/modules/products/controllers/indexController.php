@@ -24,9 +24,9 @@ function construct() {
 }
 
 function indexAction() {
-
-
+    
 }
+
 
 function addAction() {
 	$categorys = getAllCategory();
@@ -289,7 +289,7 @@ function listAction() {
 	$data = [$res, $num, $page];
 	////////////////////////////////////////////////////////////////
 	load_view('list',$data);
-}
+} 
 
 
 function deleteAction() {
@@ -297,4 +297,5 @@ function deleteAction() {
 	$id = $_GET['id'];
 	delete_product_by_id($id);
 	header('location:?modules=products&controllers=index&action=list');
-}
+} 
+
