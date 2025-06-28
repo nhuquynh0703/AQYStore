@@ -76,7 +76,7 @@
                     <ul id="list-paging" class="fl-right">
                         <?php for ($i=1; $i <= $data['1'] ; $i++) { ?>
                         <li>
-                            <a <?php if($i == $data['2']) echo 'style="background-color: green;color:white; border-radius:300px;"';  ?>  href="?modules=categorys&controllers=index&action=list&page=<?php echo $i; ?>" title=""><?php echo $i; ?></a>
+                            <a <?php if($i == $data['2']) echo 'style="background-color: green;color:white; border-radius:300px;"';  ?>  href="?modules=blogs&controllers=index&action=list&page=<?php echo $i; ?>" title=""><?php echo $i; ?></a>
                         </li>
                         <?php }; ?>
                     </ul>

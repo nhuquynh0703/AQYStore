@@ -30,3 +30,6 @@ function update_category_by_id($id,$data){
 	return db_update("tbl_category", $data, "`id`='$id'");
 }
 
+
+
+
