@@ -63,7 +63,7 @@
                                 <?php
                                 $id = $value['id'];
                                 if (!empty($_SESSION['id_customer'])) {
-                                    $urlll = "?modules=carts&controllers=index&action=add&id=$id";
+                                    $urlll = "?modules=carts&controllers=index&action=addByNow&id=$id";
                                 } else {
                                     $urlll = "?modules=users&controllers=index&action=index&report=1";
                                 }
