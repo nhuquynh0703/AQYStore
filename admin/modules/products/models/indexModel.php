@@ -40,3 +40,13 @@ function delete_product_by_id($id){
 
 	return db_delete("tbl_product", "`id` = '$id'");
 }
+
+/*function searchProduct($keyword){
+    return db_fetch_array("SELECT * FROM tbl_product WHERE name LIKE '%$keyword%' OR code LIKE '%$keyword%'");
+}*/
+
+
+
+
+
+

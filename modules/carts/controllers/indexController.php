@@ -33,10 +33,20 @@ function addAction(){
 
 
 function addByNowAction(){
-
-	$id = $_GET['id'];
-	addCartByID($id);
-	header('location: ?modules=checkouts&controllers=index&action=index');
+    $id = $_GET['id'];
+    $item = getProductDetailById($id);
+    if ($item) {
+        $_SESSION['buy_now'] = [
+            'id' => $item['id'],
+            'code' => $item['code'],
+            'name' => $item['name'],
+            'price' => $item['promotional_price'],
+            'image' => $item['image'],
+            'qty' => 1,
+            'sub_total' => $item['promotional_price']
+        ];
+    }
+    header('location: ?modules=checkouts&controllers=index&action=index');
 }
 
 
