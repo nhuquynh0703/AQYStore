@@ -62,7 +62,7 @@
                     <ul class="list-item">
                         <?php if(!empty($data{'2'})) foreach ($data['2'] as  $value) {?>
 
-                        <li>
+                        <li> 
                             <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="thumb">
                                 <img src="<?php echo $value['image'] ;?>">
                             </a>
@@ -88,3 +88,4 @@
 </div>
 
 <?php get_footer(); ?>
+

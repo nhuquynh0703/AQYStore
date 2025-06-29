@@ -61,7 +61,7 @@ function addAction() {
 		if ($uploadOk == 0) {
 		} else {
 		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-		    $image ="public/uploads".basename($_FILES["image"]["name"]) ;
+		    $image ="public/uploads/".basename($_FILES["image"]["name"]) ;
 		  } 
 		}
 		if(empty($err)){
