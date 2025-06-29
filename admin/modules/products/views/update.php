@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost'; // Tên server
-$dbname = 'store'; // Tên cơ sở dữ liệu
+$dbname = 'aqystore'; // Tên cơ sở dữ liệu
 $username = 'root'; // Tên người dùng cơ sở dữ liệu
 $password = ''; // Mật khẩu của người dùng cơ sở dữ liệu
 

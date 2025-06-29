@@ -1,247 +1,163 @@
 <?php
 
+
+
+
 function construct() {
-
-	load_model('index');
+    load_model('index');
 }
 
-function indexAction() {
-
-}
+function indexAction() {}
 
 function addAction() {
-	$name="";
-	$code="";
-	$image="";
-	$description="";
-	$user="";
-	$err = array();
-	if(!empty($_POST['btn_submit'])){
-		if(!empty($_POST['name'])){
-			$name = $_POST['name'];
-		}else{
-			$err['name'] ="name không được rỗng";		
-		}
+    $name = "";
+    $code = "";
+    $image = "";
+    $description = "";
+    $user = "";
+    $err = [];
 
-		if(!empty($_POST['user'])){
-			$user = $_POST['user'];
-		}else{
-			$err['user'] ="user không được rỗng";		
-		}
+    if (!empty($_POST['btn_submit'])) {
+        $name = trim($_POST['name'] ?? '');
+        $code = trim($_POST['code'] ?? '');
+        $user = trim($_POST['user'] ?? '');
+        $description = trim($_POST['description'] ?? '');
 
-		if(!empty($_POST['code'])){
-			$code = $_POST['code'];
-		}else{
-			$err['code'] ="code không được rỗng";		
-		}
+        if (empty($name))         $err['name'] = "Tên thương hiệu không được để trống.";
+        if (empty($code))         $err['code'] = "Mã code không được để trống.";
+        if (empty($user))         $err['user'] = "Người tạo không được để trống.";
+        if (empty($description))  $err['description'] = "Mô tả không được để trống.";
 
-		if(!empty($_POST['description'])){
-			$description = $_POST['description'];
-		}else{
-			$err['description'] ="description không được rỗng";		
-		}
+        // Kiểm tra file ảnh
+        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+            $target_dir = "public/uploads/";
+            if (!is_dir($target_dir)) mkdir($target_dir, 0777, true);
+            $image_name = basename($_FILES["image"]["name"]);
+            $target_file = $target_dir . $image_name;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            $check = getimagesize($_FILES["image"]["tmp_name"]);
+            if ($check === false) {
+                $err['image'] = "File tải lên không phải là ảnh.";
+            } elseif ($_FILES["image"]["size"] > 2 * 1024 * 1024) {
+                $err['image'] = "Ảnh quá lớn (tối đa 2MB).";
+            } elseif (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
+                $err['image'] = "Chỉ chấp nhận file jpg, jpeg, png, gif.";
+            } elseif (file_exists($target_file)) {
+                $err['image'] = "Ảnh đã tồn tại trên hệ thống.";
+            } else {
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    $image = $target_file;
+                } else {
+                    $err['image'] = "Lỗi khi upload ảnh.";
+                }
+            }
+        } else {
+            $err['image'] = "Bạn chưa chọn ảnh hoặc upload ảnh bị lỗi.";
+        }
 
-		// kiểm tra file ảnh
-			$target_dir = "public/uploads/";
-			$target_file = $target_dir . basename($_FILES["image"]["name"]);
-			$uploadOk = 1;
-			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        // Nếu không có lỗi, thêm mới
+        if (empty($err)) {
+            $create_date = date("d/m/Y", time());
+            $data = [
+                'name'        => $name,
+                'code'        => $code,
+                'image'       => $image,
+                'description' => $description,
+                'create_date' => $create_date,
+                'user'        => $user
+            ];
+            if (insert_category($data)) {
+                echo "<script>alert('Thêm mới thành công');window.location='?modules=brands&controllers=index&action=list';</script>";
+                exit;
+            } else {
+                echo "<script>alert('Thêm mới thương hiệu thất bại');</script>";
+            }
+        }
+    }
 
-			if(isset($_POST["submit"])) {
-			  $check = getimagesize($_FILES["image"]["tmp_name"]);
-			  if($check !== false) {
-			    $uploadOk = 1;
-			  } else {
-			    $uploadOk = 0;
-			  }
-			}
-
-			if (file_exists($target_file)) {
-			  $uploadOk = 0;
-			}
-
-			if ($_FILES["image"]["size"] > 200000000) {
-			  $uploadOk = 0;
-			}
-
-			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-			&& $imageFileType != "gif" ) {
-			  $uploadOk = 0;
-			}
-
-			if ($uploadOk == 0) {
-			} else {
-			  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-			    $image = $target_dir. basename( $_FILES["image"]["name"]);
-			  }
-			}
-			if(empty($image)){
-				$err['image'] = "image không được rỗng";
-			}
-
-		if(empty($err)){
-		$create_date = date("d/m/Y",time());
-		$data = [
-			'name' =>$name,
-			'code' =>$code,
-			'image' =>$image,
-			'description' =>$description,
-			'create_date' =>$create_date,
-			'user' => $user
-		];
-			if(insert_category($data)){
-				
-	        	echo " <script type='text/javascript'> alert('Thêm mới thành công');</script>";
-			}else{
-				
-	        	echo " <script type='text/javascript'> alert('Thêm mới danh mục sản phẩm thất bại');</script>";
-			}
-
-		}
-		else{
-			
-	        echo " <script type='text/javascript'> alert('Thêm mới danh mục sản phẩm thất bại haha');</script>";
-		}
-
-	}
-	load_view('add');
-	
-
+    // Truyền biến lỗi, biến cũ xuống view
+    $data = [
+        'err' => $err,
+        'old' => [
+            'name' => $name,
+            'code' => $code,
+            'user' => $user,
+            'description' => $description,
+        ]
+    ];
+    load_view('add', $data);
 }
 
 function listAction() {
+    $data_tmp = getAll();
+    $page = (!empty($_GET['page'])) ? intval($_GET['page']) : 1;
+    $numProduct = count($data_tmp);
+    $productOnPage = 5;
+    $num = ceil($numProduct / $productOnPage);
+    if ($page > $num) $page = $num;
+    $start = ($page - 1) * $productOnPage;
+    $res = array_slice($data_tmp, $start, $productOnPage);
 
-	$data_tmp = getAll();
-	// phaan trang
-	$page;
-	if(!empty($_GET['page'])){
-		$page = $_GET['page'];
-	}else{
-		$page =1;
-	}
-	
-	$numProduct = count($data_tmp);
-	$productOnPage = 5;
-	$num = ceil($numProduct/$productOnPage);
-	if(!empty($_GET['page']) && $_GET['page']>$num){
-		$page =$num;
-	}
-	$start = ($page - 1) * $productOnPage;
-	$res =[];
-	for ($i=$start; $i < $start+$productOnPage; $i++) { 
-		if(isset($data_tmp[$i]))
-        $res[] = $data_tmp[$i];
-	};
-
-	$data = [$res, $num, $page];
-	load_view('list',$data);
+    $data = [$res, $num, $page];
+    load_view('list', $data);
 }
 
 function deleteAction() {
-
-	$id = $_GET['id'];
-	delete_category_by_id($id);
-	header('location:?modules=brands&controllers=index&action=list');
+    $id = $_GET['id'];
+    delete_category_by_id($id);
+    header('location:?modules=brands&controllers=index&action=list');
+    exit;
 }
 
-
-
 function editAction() {
-	
-	$id = $_GET['id'];
-	$data = get_category_by_id($id);
-	load_view('show',$data);
-	
+    $id = $_GET['id'];
+    $data = get_category_by_id($id);
+    load_view('show', $data);
 }
 
 function updateAction() {
-	$id = $_GET['id'];
-	$image="";
-	$data = get_category_by_id($id);
-	$data1 = array();
-	if(!empty($_POST['btn_submit'])){
+    $id = $_GET['id'];
+    $old_data = get_category_by_id($id);
+    $data1 = [];
+    $err = [];
 
-		if(empty($_POST['name'])){
-			$data1['name'] = $data[0]['name'];
-		}else{
-			$data1['name'] = $_POST['name'];
-		}
+    if (!empty($_POST['btn_submit'])) {
+        $data1['name'] = !empty($_POST['name']) ? trim($_POST['name']) : $old_data[0]['name'];
+        $data1['code'] = !empty($_POST['code']) ? trim($_POST['code']) : $old_data[0]['code'];
+        $data1['user'] = !empty($_POST['user']) ? trim($_POST['user']) : $old_data[0]['user'];
+        $data1['description'] = !empty($_POST['description']) ? trim($_POST['description']) : $old_data[0]['description'];
 
-		if(empty($_POST['code'])){
-			$data1['code'] = $data[0]['code'];
-		}else{
-			$data1['code'] = $_POST['code'];
-		}
+        // Xử lý lại ảnh nếu có upload mới
+        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+            $target_dir = "public/uploads/";
+            if (!is_dir($target_dir)) mkdir($target_dir, 0777, true);
+            $image_name = basename($_FILES["image"]["name"]);
+            $target_file = $target_dir . $image_name;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            $check = getimagesize($_FILES["image"]["tmp_name"]);
+            if ($check !== false && $_FILES["image"]["size"] <= 2 * 1024 * 1024
+                && in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])
+                && !file_exists($target_file)
+            ) {
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    $data1['image'] = $target_file;
+                } else {
+                    $data1['image'] = $old_data[0]['image'];
+                }
+            } else {
+                $data1['image'] = $old_data[0]['image'];
+            }
+        } else {
+            $data1['image'] = $old_data[0]['image'];
+        }
+    }
 
-		if(empty($_POST['user'])){
-			$data1['user'] = $data[0]['user'];
-		}else{
-			$data1['user'] = $_POST['user'];
-		}
-
-		if(empty($_POST['description'])){
-			$data1['description'] = $data[0]['description'];
-		}else{
-			$data1['description'] = $_POST['description'];
-		}
-
-		//// anh
-		$target_dir = "public/uploads/";
-		$target_file = $target_dir . basename($_FILES["image"]["name"]);
-		$uploadOk = 1;
-		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-		if(isset($_POST["submit"])) {
-		  $check = getimagesize($_FILES["image"]["tmp_name"]);
-		  if($check !== false) {
-		    $uploadOk = 1;
-		  } else {
-		    $uploadOk = 0;
-		  }
-		}
-
-		if (file_exists($target_file)) {
-		  $uploadOk = 0;
-		}
-
-		if ($_FILES["image"]["size"] > 200000000) {
-		  $uploadOk = 0;
-		}
-
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-		&& $imageFileType != "gif" ) {
-		  $uploadOk = 0;
-		}
-
-		if ($uploadOk == 0) {
-
-		} else {
-		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-		    $image = $target_dir. basename( $_FILES["image"]["name"]);
-		  } else {
-		  }
-		}
-
-		if(!empty($image)){
-			$data1['image'] = $image;
-		}else{
-			$data1['image'] = $data[0]['image'];
-		}
-
-
-
-	}
-
-
-	///////////////////////////////////////
-	if(update_category_by_id($id,$data1)){
-		$res = get_category_by_id($id);
-		load_view('show',$res);
-            echo " <script type='text/javascript'> alert('Cập Nhật Thành Công');</script>";
-	}else{
-			load_view('show',$data);
-            echo " <script type='text/javascript'> alert('Cập Nhật Thất Bại');</script>";
-	}
-	
-	
+    if (update_category_by_id($id, $data1)) {
+        $res = get_category_by_id($id);
+        load_view('show', $res);
+        echo "<script>alert('Cập nhật thành công');</script>";
+    } else {
+        load_view('show', $old_data);
+        echo "<script>alert('Cập nhật thất bại');</script>";
+    }
 }

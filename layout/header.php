@@ -29,6 +29,8 @@
     <script src="public/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="public/js/carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
+
+
 </head>
 
 <body>
@@ -126,7 +128,7 @@
                                         </a>
                                         <div class="info fl-right">
                                             <a href="" title="" class="product-name"><?php echo $value['name']; ?></a>
-                                            <p class="price"><?php echo $value['price'].' .VNĐ'; ?></p>
+                                            <p class="price"><?php echo number_format((int)$value['price'], 0, ',', '.').' .VNĐ'; ?></p>
                                             <p class="qty">Số lượng: <span><?php echo $value['qty'] ;?></span></p>
                                         </div>
                                     </li>
@@ -135,7 +137,7 @@
                                 <div class="total-price clearfix">
                                     <p class="title fl-left">Tổng:</p>
                                     <p class="price fl-right">
-                                        <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['total']." .VNĐ"; else echo "0 .VNĐ"; ?>
+                                        <?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo number_format((int)$_SESSION['cart']['info']['total'], 0, ',', '.')." .VNĐ"; else echo "0 .VNĐ"; ?>
                                     </p>
                                 </div>
                                 <dic class="action-cart clearfix">
