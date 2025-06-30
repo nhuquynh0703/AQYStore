@@ -8,7 +8,7 @@
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix">
-                    <h3 id="index" class="fl-left">Thêm sản phẩm</h3>
+                    <h3 id="index" class="fl-left">Thêm mới sản phẩm</h3>
                     <a href="?modules=products&controllers=index&action=list" title="" id="add-new" class="fl-left">Danh sách</a>
                 </div>
             </div>

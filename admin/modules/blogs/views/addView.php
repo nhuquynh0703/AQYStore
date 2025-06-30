@@ -9,7 +9,7 @@ $old = $data['old'] ?? [];
         <div id="content" class="fl-right">
             <div class="section" id="title-page">
                 <div class="clearfix">
-                    <h3 id="index" class="fl-left">Thêm bài viết mới</h3>
+                    <h3 id="index" class="fl-left">Thêm mới bài viết</h3>
                     <a href="?modules=blogs&controllers=index&action=list" title="" id="add-new" class="fl-left">Danh sách</a>
                 </div>
             </div>

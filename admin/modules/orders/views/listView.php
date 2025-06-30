@@ -60,7 +60,7 @@
                                     <td><span class="tbody-text"><?php  echo $value['date_confirm']; ?></span></td>
                                     <td><span class="tbody-text"><?php  echo $value['fullname']; ?></span></td>
                                     <td><span class="tbody-text"><?php  echo $value['total_num_product']; ?></span></td>
-                                    <td><span class="tbody-text"><?php  echo $value['total_price']; ?></h3></span>
+                                    <td><span class="tbody-text"><?php  echo number_format((int)$value['total_price'], 0, ',', '.'); ?></h3></span>
                                     <td><span class="tbody-text"><?php  echo $value['payment_method']; ?></span></td>
                                     <td><span class="tbody-text" style="color: green;">Thành công</span></td>
                                 </tr>

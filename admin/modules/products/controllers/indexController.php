@@ -205,7 +205,7 @@ function addAction() {
 		// }else{
 		// 	echo " <script type='text/javascript'> alert('copy khong thành công');</script>";
 		// }
-           $target_dir = "C:/xampp/htdocs/AQYSTORE/public/uploads/";
+           $target_dir = "C:/xampp/htdocs/AQYStore/public/uploads/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

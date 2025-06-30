@@ -64,9 +64,9 @@
                                         </div>
                                     </td>
                                     <td><span class="tbody-text"><?php echo $value['name']; ?></h3></span>
-                                    <td><span class="tbody-text"><?php echo $value['price'] ;?></span></td>
+                                    <td><span class="tbody-text"><?php echo number_format((int)$value['price'], 0, ',', '.');?></span></td>
                                     <td><span class="tbody-text"><?php echo $value['qty'] ;?></span></td>
-                                    <td><span class="tbody-text"><?php echo $value['sub_total_price']; ?></span></td>
+                                    <td><span class="tbody-text"><?php echo number_format((int)$value['sub_total_price'], 0, ',', '.'); ?></span></td>
                                     <td><span  class="tbody-text"><?php echo $value['mess']; ?></span></td>
                                 </tr> 
 

@@ -101,12 +101,8 @@
         ?>" title="" class="add-cart fl-left">Thêm giỏ hàng</a>
 
         <?php if (!empty($_SESSION['id_customer'])): ?>
-            <form action="?modules=carts&controllers=index&action=buy_now" method="GET" class="fl-right">
-                <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
-                <button type="submit" class="buy-now">Mua ngay</button>
-            </form>
-        <?php else: ?>
-            <a href="?modules=users&controllers=index&action=index&report=1" class="buy-now fl-right">Mua ngay</a>
+            <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id"; else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
+                                    title="" class="buy-now fl-right">Mua ngay</a>
         <?php endif; ?>
     </div>
 </li>

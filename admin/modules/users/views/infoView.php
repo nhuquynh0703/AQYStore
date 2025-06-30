@@ -3,7 +3,7 @@
 <div id="main-content-wp" class="info-account-page">
     <div class="section" id="title-page">
         <div class="clearfix">
-            <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>
+            <!-- <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a> -->
             <h3 id="index" class="fl-left">Cập nhật tài khoản</h3>
         </div>
     </div>
@@ -14,7 +14,7 @@
                     <a href="?modules=users&controller=index&action=pass" title="">Đổi mật khẩu</a>
                 </li>
                 <li>
-                    <a href="?modules=users&controllers=index&action=logout" title="">Thoát</a>
+                    <a href="?modules=users&controllers=index&action=logout" title="">Đăng xuất</a>
                 </li>
             </ul>
         </div>
