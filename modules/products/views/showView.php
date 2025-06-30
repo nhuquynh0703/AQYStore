@@ -76,6 +76,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="section" id="paging-wp">
                 <div class="section-detail">
                     <ul class="list-item clearfix">
@@ -87,6 +88,7 @@
                     </ul>
                 </div>
             </div>
+            
         </div>
         
 <?php get_sidebar('sidebar02'); ?>

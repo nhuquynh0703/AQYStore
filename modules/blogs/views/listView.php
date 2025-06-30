@@ -32,7 +32,7 @@
                         <li class="clearfix">
                             <a href="?modules=blogs&controllers=index&action=detail&id=<?php echo $value['id']; ?>" class="thumb fl-left">
                                 <img class="pic-blog" src="<?php echo $value['image']; ?>" alt="">
-
+                                
                             </a>
                             <div class="info fl-right">
                                 <a href="?modules=blogs&controllers=index&action=detail&id=<?php echo $value['id']; ?>" class="title"><?php echo $value['title']; ?></a>

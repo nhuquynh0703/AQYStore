@@ -7,18 +7,18 @@
             <div class="section" id="title-page">
                 <div class="clearfix">
                     <h3 id="index" class="fl-left">Danh sách khách hàng</h3>
-                    <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a>
+                    <!-- <a href="?page=add_cat" title="" id="add-new" class="fl-left">Thêm mới</a> -->
                 </div>
             </div>
             <div class="section" id="detail-page">
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
-                        <ul class="post-status fl-left">
+                        <!-- <ul class="post-status fl-left">
                             <li class="all"><a href="">Tất cả <span class="count">(69)</span></a> |</li>
                             <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
                             <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span> |</a></li>
                             <li class="pending"><a href="">Thùng rác<span class="count">(0)</span></a></li>
-                        </ul>
+                        </ul> -->
                         <form method="GET" class="form-s fl-right">
                             <input type="text" name="s" id="s">
                             <input type="submit" name="sm_s" value="Tìm kiếm">

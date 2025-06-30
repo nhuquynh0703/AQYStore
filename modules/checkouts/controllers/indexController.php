@@ -14,6 +14,15 @@ function indexAction(){
 
 }
 
+function index1Action(){
+	$data=array();
+	if(!empty($_SESSION['id_customer'])){
+		$data[] = getUserById($_SESSION['id_customer']);
+	}
+	load_view('index1',$data);
+
+}
+
 function storyAction(){
 	$data = array();
 	if(!empty($_SESSION['id_customer'])){

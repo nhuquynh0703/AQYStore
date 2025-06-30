@@ -58,7 +58,25 @@ function showAction(){
             $res[] = $data_tmp[$i];
     }
 
-    $data = [$name, $res, $num, $id, $page, $id_brand]; // Nếu cần truyền $id_brand
+    $page = !empty($_GET['page']) ? $_GET['page'] : 1;
+    $numProduct = count($data_tmp);
+    $productOnPage = 12;
+    $num = ceil($numProduct / $productOnPage);
+    if (!empty($_GET['page']) && $_GET['page'] > $num) {
+        $page = $num;
+    }
+
+    $start = ($page - 1) * $productOnPage;
+    $res = [];
+    for ($i = $start; $i < $start + $productOnPage; $i++) {
+        if (isset($data_tmp[$i]))
+            $res[] = $data_tmp[$i];
+    }
+
+	$total_product = $numProduct;
+    $displaying_count = count($res);
+
+    $data = [$name, $res, $num, $id, $page, $id_brand, $total_product, $displaying_count]; // Nếu cần truyền $id_brand
     load_view('show', $data);
 }
 
@@ -93,8 +111,26 @@ function show1Action(){
         if (isset($data_tmp[$i]))
             $res[] = $data_tmp[$i];
     }
+    
+    $page = !empty($_GET['page']) ? $_GET['page'] : 1;
+    $numProduct = count($data_tmp);
+    $productOnPage = 12;
+    $num = ceil($numProduct / $productOnPage);
+    if (!empty($_GET['page']) && $_GET['page'] > $num) {
+        $page = $num;
+    }
 
-    $data = [$name, $res, $num, $id, $page, $id_brand]; // Nếu cần truyền $id_brand
+    $start = ($page - 1) * $productOnPage;
+    $res = [];
+    for ($i = $start; $i < $start + $productOnPage; $i++) {
+        if (isset($data_tmp[$i]))
+            $res[] = $data_tmp[$i];
+    }
+
+	$total_product = $numProduct;
+    $displaying_count = count($res); 
+
+    $data = [$name, $res, $num, $id, $page, $id_brand, $total_product, $displaying_count]; // Nếu cần truyền $id_brand
     load_view('show1', $data);
 }
 
@@ -131,7 +167,25 @@ function show2Action(){
             $res[] = $data_tmp[$i];
     }
 
-    $data = [$name, $res, $num, $id, $page, $id_brand]; // Nếu cần truyền $id_brand
+    $page = !empty($_GET['page']) ? $_GET['page'] : 1;
+    $numProduct = count($data_tmp);
+    $productOnPage = 12;
+    $num = ceil($numProduct / $productOnPage);
+    if (!empty($_GET['page']) && $_GET['page'] > $num) {
+        $page = $num;
+    }
+
+    $start = ($page - 1) * $productOnPage;
+    $res = [];
+    for ($i = $start; $i < $start + $productOnPage; $i++) {
+        if (isset($data_tmp[$i]))
+            $res[] = $data_tmp[$i];
+    }
+
+	$total_product = $numProduct;
+    $displaying_count = count($res); 
+
+    $data = [$name, $res, $num, $id, $page, $id_brand, $total_product, $displaying_count]; 
+    // Nếu cần truyền $id_brand
     load_view('show2', $data);
 }
-

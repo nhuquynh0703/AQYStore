@@ -43,6 +43,7 @@ function addAction() {
 
 		// kiểm tra file ảnh
 			$target_dir = "public/uploads/";
+			$target_save =  $_SERVER['DOCUMENT_ROOT'] . "/AQYStore/public/uploads/";
 			$target_file = $target_dir . basename($_FILES["image"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

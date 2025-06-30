@@ -47,6 +47,7 @@ function addByNowAction(){
         ];
     }
     header('location: ?modules=checkouts&controllers=index&action=index');
+	
 }
 
 

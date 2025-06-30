@@ -41,6 +41,8 @@ function addAction() {
         // Xử lý upload ảnh
         if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
             $target_dir = "public/uploads/";
+            $target_save =  $_SERVER['DOCUMENT_ROOT'] . "/AQYStore/public/uploads/";
+            
             if (!is_dir($target_dir)) mkdir($target_dir, 0777, true);
             $image_name = basename($_FILES["image"]["name"]);
             $target_file = $target_dir . $image_name;
@@ -52,10 +54,11 @@ function addAction() {
                 $err['image'] = "Ảnh quá lớn (tối đa 2MB).";
             } elseif (!in_array($imageFileType, ["jpg", "jpeg", "png", "gif"])) {
                 $err['image'] = "Chỉ chấp nhận file jpg, jpeg, png, gif.";
-            } elseif (file_exists($target_file)) {
-                $err['image'] = "Ảnh đã tồn tại trên hệ thống.";
-            } else {
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            } // elseif (file_exists($target_file)) {
+            //     $err['image'] = "Ảnh đã tồn tại trên hệ thống.";
+            //} 
+            else {
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_save . $_FILES["image"]["name"])) {
                     $image = $target_file;
                 } else {
                     $err['image'] = "Lỗi khi upload ảnh.";
@@ -103,4 +106,3 @@ function deleteAction() {
     delete_blog_by_id($id);
     header('location:?modules=blogs&controllers=index&action=list');
 }
-

@@ -25,8 +25,11 @@
                 <div class="section-detail">
                     <span class="create-date"><?php echo $data['create_date']; ?></span>
                     <div class="detail">
+                        <img class="pict-blog" src="<?php echo $data['image'];?>" alt="">             
                         <?php echo $data['content']; ?>
+                       
                     </div>
+                    
                 </div>
 
             </div>
@@ -38,7 +41,7 @@
                     </div>
                     <div class="fb-comments" id="fb-comment" data-href="" data-numposts="5"></div>
                 </div>
-                <p>Chủ sở hữu của : <?php echo $data['user']; ?></p>
+                <p>Chủ sở hữu: <?php echo $data['user']; ?></p>
             </div>
         </div>
 <?php get_sidebar(); ?>

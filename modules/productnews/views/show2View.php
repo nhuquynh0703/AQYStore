@@ -19,7 +19,8 @@
                 <div class="section-head clearfix">
                     <h3 class="section-title fl-left"><?php echo($data['0']['name']) ; ?></h3>
                     <div class="filter-wp fl-right">
-                        <p class="desc">Hiển thị 45 trên 50 sản phẩm</p>
+                        <p class="desc">Hiển thị <?php echo $data['7']; ?> trên <?php echo $data['6']; ?> sản phẩm</p>
+
                         <div class="form-filter">
                             <form method="POST" action="">
                                 <select name="select">
@@ -70,7 +71,7 @@
 
 <a 
     <?php if($i == $current_page) echo 'style="background-color: green;"'; ?> 
-    href="?modules=productnews&controllers=index&action=show&id_cat=<?php echo $id_cat; ?>&<?php if($id_brand) echo "id_brand=$id_brand&"; ?>page=<?php echo $i; ?>" 
+    href="?modules=productnews&controllers=index&action=show2&id_cat=<?php echo $id_cat; ?>&<?php if($id_brand) echo "id_brand=$id_brand&"; ?>page=<?php echo $i; ?>" 
     title=""><?php echo $i; ?></a>
                         </li>
                         <?php }; ?>
@@ -83,4 +84,7 @@
     </div>
 </div>
 
+
+
 <?php get_footer(); ?>
+

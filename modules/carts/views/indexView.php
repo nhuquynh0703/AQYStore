@@ -79,7 +79,7 @@
                                     <div  class="fl-right">
                                         <a style="margin-right: 660px;background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);;" href="?modules=checkouts&controllers=index&action=story" title="" id="checkout-cart">Lịch sử đơn hàng</a>
                                         <input type="submit" id="update-cart" name="btn-update_cart" value="Cập nhật giỏ hàng">
-                                        <a href="?modules=checkouts&controllers=index&action=index" title="" id="checkout-cart">Thanh toán</a>
+                                        <a href="?modules=checkouts&controllers=index&action=index1" title="" id="checkout-cart">Thanh toán</a>
                                     </div>
                                 </div>
                             </td>

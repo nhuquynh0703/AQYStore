@@ -163,14 +163,14 @@ function addAction() {
 			$err['user'] ="user không được rỗng";
 		}
 
-		////// ảnh
-	/*	$target_dir = "C:/xampp/htdocs/AQYStore/public/uploads";
+		// Xử lý ảnh
+		$target_dir = "public/uploads/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
+		$target_save =  $_SERVER['DOCUMENT_ROOT'] . "/AQYStore/public/uploads/";
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-		$target_dir1 = "public/uploads/";
-		$target_file1 = $target_dir1 . basename($_FILES["image"]["name"]);
 
+		
 		if(isset($_POST["submit"])) {
 		  $check = getimagesize($_FILES["image"]["tmp_name"]);
 		  if($check !== false) {
@@ -195,49 +195,16 @@ function addAction() {
 
 		if ($uploadOk == 0) {
 		} else {
-		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file) ) {
-		    $image ="public/uploads/".basename($_FILES["image"]["name"]) ;
-		  } 
-		  
-		} */
+		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_save . $_FILES["image"]["name"])) {
+                    $image = $target_file;
+		  } 		  
+		} 
 		// if(copy($target_dir . basename($_FILES["image"]["name"]), $target_dir1)){
 		// 	echo " <script type='text/javascript'> alert('copy thành công');</script>";
 		// }else{
 		// 	echo " <script type='text/javascript'> alert('copy khong thành công');</script>";
 		// }
-           $target_dir = "C:/xampp/htdocs/AQYStore/public/uploads/";
-		$target_file = $target_dir . basename($_FILES["image"]["name"]);
-		$uploadOk = 1;
-		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-		if(isset($_POST["submit"])) {
-		  $check = getimagesize($_FILES["image"]["tmp_name"]);
-		  if($check !== false) {
-		    $uploadOk = 1;
-		  } else {
-		    $uploadOk = 0;
-		  }
-		}
-
-		if (file_exists($target_file)) {
-		  $uploadOk = 0;
-		}
-
-		if ($_FILES["image"]["size"] > 2000000000) {
-		  $uploadOk = 0;
-		}
-
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-		&& $imageFileType != "gif" ) {
-		  $uploadOk = 0;
-		}
-
-		if ($uploadOk == 0) {
-		} else {
-		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-		    $image ="public/uploads/".basename($_FILES["image"]["name"]) ;
-		  } 
-		}
+		
 		if(empty($err)){
 		$create_date = date("d/m/Y",time());
 		$res = [
@@ -330,4 +297,3 @@ function deleteAction() {
 	delete_product_by_id($id);
 	header('location:?modules=products&controllers=index&action=list');
 } 
-

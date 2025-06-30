@@ -31,8 +31,9 @@ function addAction() {
 		}
 
 		// xxử lý ảnh
-		$target_dir = "C:/xampp/htdocs/AQYSTORE/public/uploads";
+		$target_dir = "public/uploads/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
+        $target_save =  $_SERVER['DOCUMENT_ROOT'] . "/AQYStore/public/uploads/";
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -60,8 +61,8 @@ function addAction() {
 
 		if ($uploadOk == 0) {
 		} else {
-		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-		    $image ="public/uploads/".basename($_FILES["image"]["name"]) ;
+		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_save . $_FILES["image"]["name"])) {
+                    $image = $target_file;
 		  } 
 		}
 		if(empty($err)){

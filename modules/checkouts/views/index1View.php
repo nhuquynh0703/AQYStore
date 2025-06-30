@@ -93,6 +93,7 @@
                 <div class="section-head">
                     <h1 class="section-title">Thông tin đơn hàng</h1>
                 </div>
+
                 <div class="section-detail">
                     <table class="shop-table" width="500px" height="20px">
                         <thead>
@@ -101,37 +102,32 @@
                                 <td>Tổng</td>
                             </tr>
                         </thead>
+
                         <tbody>
-                            <?php if(isset($_SESSION['buy_now'])) { ?>
-                                <tr class="cart-item">
-                                    <td class="product-name"><?php echo $_SESSION['buy_now']['name']; ?><strong class="product-quantity"> x 1</strong></td>
-                                    <td class="product-total"><?php echo number_format((int)$_SESSION['buy_now']['sub_total'], 0, ',', '.') ." VND"?></td>
-                                </tr>
-                            <?php } else if(isset($_SESSION['cart']['buy'])) { 
-                                foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>
-                                <tr class="cart-item">
-                                    <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity"> x <?php echo $value['qty']; ?></strong></td>
-                                    <td class="product-total"><?php echo number_format((int)$value['sub_total'], 0, ',', '.') ." VND"?></td>
-                                </tr>
-                            <?php }} ?>
+                            <?php if(isset($_SESSION['cart']['buy']) ){?>
+                            <?php foreach ($_SESSION['cart']['buy'] as $key => $value) { ?>
+                            <tr class="cart-item">
+                                <td class="product-name"><?php echo $value['name']; ?><strong class="product-quantity">   x
+                                        <?php echo $value['qty']; ?></strong></td>
+                                <td class="product-total"><?php echo number_format((int)$value['sub_total'], 0, ',', '.') ." VND"; ?></td>
+                            </tr>
+                            <?php }}; ?>
+
+                            
                         </tbody>
                         <tfoot>
                             <tr class="order-total">
                                 <td>Tổng đơn hàng:</td>
                                 <td>
                                     <strong class="total-price">
-                                        <?php
-                                        if(isset($_SESSION['buy_now'])) {
-                                            $tong = $_SESSION['buy_now']['sub_total'];
-                                            echo number_format($tong, 0, ',', '.') . " VND";
-                                        } else if(isset($_SESSION['cart']['buy'])) {
-                                            $tong = $_SESSION['cart']['info']['total'];
-                                            echo number_format($tong, 0, ',', '.') . " VND";
-                                        } else {
-                                            $tong = 0;
-                                            echo "VND";
-                                        }
-                                        ?>
+                                        <?php if(isset($_SESSION['cart']['buy'])) 
+                                            {$tong= $_SESSION['cart']['info']['total']; 
+                                            echo number_format($tong, 0, ',', '.') . " VND"; }
+                                            else {
+                                                $tong =0;
+                                                echo "VND";
+                                            } ?>
+
                                     </strong>
                                 </td>
                             </tr>
