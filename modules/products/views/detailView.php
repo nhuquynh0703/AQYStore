@@ -42,7 +42,7 @@
                             <?php echo number_format($data['1']['promotional_price'], 0, ',', '.') . ' VNĐ';?></p>
                         <div id="num-order-wp">
                             <p style="display: inline-block; ">Số lượng : </p>
-                            <input type="text" name="" style="width: 40px;text-align: center;" value="1">
+                            <input type="text" name="qty" style="width: 40px;text-align: center;" value="1">
                         </div>
                         <a href="<?php $id = $data['1']['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=add&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
                             title="Thêm giỏ hàng" class="add-cart">Thêm giỏ hàng</a>
