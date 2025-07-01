@@ -198,6 +198,7 @@ function commentAction() {
             $content = trim($_POST['comment']);
             if (!empty($content)) {
                 insertComment($id, $_SESSION['id_customer'], $content);
+                echo "<script>alert('Gửi bình luận thành công'); </script>";
                 // header("Location: ?modules=products&controllers=index&action=detail&id=$id");
             } else {
                 echo "<script>alert('Bình luận không được để trống!'); window.location.href='?modules=products&controllers=index&action=detail&id=$id';</script>";

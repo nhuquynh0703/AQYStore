@@ -80,32 +80,36 @@
                         <?php if(!empty($data)) foreach ($data[2] as  $value) {?>
 
                         <li>
-    <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="thumb">
-        <img src="<?php echo $value['image']; ?>">
-    </a>
-    <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="product-name">
-        <?php echo $value['name']; ?>
-    </a>
-    <div class="price">
-        <span class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').' VND'; ?></span>
-        <span class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').' VND'; ?></span>
-    </div>
-    <div class="action clearfix">
-        <a href="<?php 
-            $id = $value['id']; 
-            if (!empty($_SESSION['id_customer'])) 
-                $urlll = "?modules=carts&controllers=index&action=add&id=$id";
-            else 
-                $urlll = "?modules=users&controllers=index&action=index&report=1";
-            echo $urlll;
-        ?>" title="" class="add-cart fl-left">Thêm giỏ hàng</a>
+                            <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>"
+                                title="" class="thumb">
+                                <img src="<?php echo $value['image']; ?>">
+                            </a>
+                            <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>"
+                                title="" class="product-name">
+                                <?php echo $value['name']; ?>
+                            </a>
+                            <div class="price">
+                                <span
+                                    class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').' VND'; ?></span>
+                                <span
+                                    class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').' VND'; ?></span>
+                            </div>
+                            <div class="action clearfix">
+                                <a href="<?php 
+                                $id = $value['id']; 
+                                if (!empty($_SESSION['id_customer'])) 
+                                    $urlll = "?modules=carts&controllers=index&action=add&id=$id";
+                                    else 
+                                    $urlll = "?modules=users&controllers=index&action=index&report=1";
+                                    echo $urlll;
+                                    ?>" title="" class="add-cart fl-left">Thêm giỏ hàng</a>
 
-        <?php if (!empty($_SESSION['id_customer'])): ?>
-            <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id"; else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
+                                
+                                <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id"; else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
                                     title="" class="buy-now fl-right">Mua ngay</a>
-        <?php endif; ?>
-    </div>
-</li>
+                                
+                            </div>
+                        </li>
 
 
                         <?php }; ?>
@@ -132,7 +136,8 @@
                             <div class="price">
                                 <span style="display: block;"
                                     class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').'VND'; ?></span>
-                                <span style="display: block;" class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').'VND'; ?></span>
+                                <span style="display: block;"
+                                    class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').'VND'; ?></span>
                             </div>
                             <div class="action clearfix">
                                 <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=add&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
@@ -162,7 +167,8 @@
                             <div class="price">
                                 <span style="display: block;"
                                     class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').'VND'; ?></span>
-                                <span style="display: block;" class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').'VND'; ?></span>
+                                <span style="display: block;"
+                                    class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').'VND'; ?></span>
                             </div>
                             <div class="action clearfix">
                                 <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=add&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
@@ -184,20 +190,25 @@
                     <ul class="list-item clearfix">
                         <?php  if(!empty($data))  foreach ($data[2] as  $value) {?>
                         <li>
-                            <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>" title="" class="thumb">
+                            <a href="?modules=products&controllers=index&action=detail&id=<?php echo $value['id']; ?>"
+                                title="" class="thumb">
                                 <img src="<?php echo $value['image']; ?>">
                             </a>
                             <a href="" title="" class="product-name"><?php  echo $value['name']; ?></a>
                             <div class="price">
-                                <span style="display: block;" class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').'.VND'; ?></span>
-                                <span style="display: block;" class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').'.VND'; ?></span>
+                                <span style="display: block;"
+                                    class="new"><?php echo number_format((int)$value['promotional_price'], 0, ',', '.').'.VND'; ?></span>
+                                <span style="display: block;"
+                                    class="old"><?php echo number_format((int)$value['price'], 0, ',', '.').'.VND'; ?></span>
                             </div>
                             <div class="action clearfix">
-                                <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=add&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> " title="" class="add-cart fl-left">Thêm giỏ hàng</a>
-                                <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id";  else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> " title="" class="buy-now fl-right">Mua ngay</a>
+                                <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=add&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
+                                    title="" class="add-cart fl-left">Thêm giỏ hàng</a>
+                                <a href="<?php $id = $value['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=carts&controllers=index&action=addByNow&id=$id";  else $urlll ="?modules=users&controllers=index&action=index&report=1" ;echo $urlll;?> "
+                                    title="" class="buy-now fl-right">Mua ngay</a>
                             </div>
                         </li>
-                    <?php }; ?>
+                        <?php }; ?>
 
                     </ul>
                 </div>
