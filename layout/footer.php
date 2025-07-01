@@ -1,3 +1,4 @@
+
 <div id="footer-wp">
     <div id="foot-body">
         <div class="wp-inner clearfix">
@@ -101,6 +102,8 @@ document.querySelector('.btn-subscribe').addEventListener('click', function(e) {
     }
 });
 </script>
+
+
 
 
 

@@ -105,7 +105,7 @@ $sum_transaction= $transaction_count+$transaction_count2;
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Doanh số (Giao Hàng)</div>
-                        <div class="h6 mb-0 font-weight-bold text-gray-800"><?php echo($total_price_sum);?> VND</div>
+                        <div class="h6 mb-0 font-weight-bold text-gray-800"><?php echo(number_format($total_price_sum, 0, ',', '.'));?> VND</div>
                     </div>
                     <div class="col-auto">
                         <i class="fa fa-money fa-2x icon text-gray-300"></i>
@@ -123,7 +123,7 @@ $sum_transaction= $transaction_count+$transaction_count2;
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Doanh số (VNPAY)</div>
-                        <div class="h6 mb-0 font-weight-bold text-gray-800"><?php echo($total_sum);?> VND</div>
+                        <div class="h6 mb-0 font-weight-bold text-gray-800"><?php echo(number_format($total_sum, 0, ',', '.'));?> VND</div>
                     </div>
                     <div class="col-auto">
                     <i class="fa fa-money fa-2x icon text-gray-300"></i>                    </div>
@@ -138,7 +138,7 @@ $sum_transaction= $transaction_count+$transaction_count2;
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">tỉ lệ Thành Công
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tỉ Lệ Thành Công
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">

@@ -46,11 +46,10 @@
                         <ul id="main-menu" class="clearfix">
 
                             <li>
-                                <a href="?modules=blogs&action=list" title="">Blog</a>
+                                <a href="?modules=blogs&action=list" title="">Tin tức</a>
                             </li>
                             <li>
                                 <a href="?modules=contacts&action=index" title="">Liên hệ</a>
-                                <!-- <a href="?modules=contacts&action=index" title="">Liên hệ</a> -->
                             </li>
                             <li>
                                 <?php if (!empty($_SESSION['fullname'])): ?>
@@ -115,8 +114,6 @@
                                 <!-- giỏ hàng -->
                                 <p class="desc">Có
                                     <span><?php if(isset($_SESSION['cart']['buy'])&&!empty($_SESSION['id_customer'])) echo $_SESSION['cart']['info']['num_oder']; else echo '0'; ?>
-                                        sản phẩm</span> trong giỏ hàng
-                                </p>
                                         sản phẩm</span> trong giỏ hàng
                                 </p>
                                 <ul class="list-cart">

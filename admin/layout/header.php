@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>MANAGER LOCALSTORE</title>
+    <title>MANAGER AQYSTORE</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -45,22 +45,12 @@
         <div id="container">
             <div id="header-wp" style="max-height: 55px;">
                 <div class="wp-inner clearfix">
-                    <a href="?modules=home" title="" id="logo" class="fl-left">AQY STORE</a>
+                    <a href="?modules=home" title="" id="logo" class="fl-left">AQYSTORE</a>
                     <ul id="main-menu" class="fl-left">
                         <li>
-                            <a href="?page=list_post" title="">Trang</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="?modules=home" title="">Thêm mới</a>
-                                </li>
-                                <li>
-                                    <a href="?modules=home" title="">Danh sách trang</a>
-                                </li>
-                            </ul>
+                            <a href="?modules=home" title="">Trang chủ</a>
+
                         </li>
-
-
-
                         <li>
                             <a href="?modules=products&controllers=index&action=list" title="">Sản phẩm</a>
                             <ul class="sub-menu">

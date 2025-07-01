@@ -9,7 +9,7 @@
                         <a href="?page=home" title="">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="?modules=blogs&action=list" title="">Blog</a>
+                        <a href="?modules=blogs&action=list" title="">Tin Tức</a>
                     </li>
                 </ul>
             </div>

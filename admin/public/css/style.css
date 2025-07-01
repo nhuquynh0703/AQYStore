@@ -2493,7 +2493,7 @@ button#default-map-btn, button#green-map-btn, button#blue-map-btn,button#grey-ma
 /*-- //maps --*/
 /*-- login --*/
 .login-bg{
-    background: url(../images/l4.jpg) no-repeat 0px 0px;
+    background: #646e95 no-repeat 0px 0px;
     background-size: cover;
     padding: 7em 0;
 }
@@ -2502,7 +2502,7 @@ button#default-map-btn, button#green-map-btn, button#blue-map-btn,button#grey-ma
     margin:0 auto;
 }
 .login-heading{
-    background: #67d3e0;
+    background: #5D6EEB;
     padding: 3em 0em;
 }
 .login-heading h1{
@@ -2532,7 +2532,7 @@ button#default-map-btn, button#green-map-btn, button#blue-map-btn,button#grey-ma
     outline: none;
     cursor: pointer;
     color: #fff;
-    background: #fd5c63;
+    background: #5c5ffd;
     width: 100%;
     padding: .5em 1em;
     font-size: 1em;
